@@ -184,9 +184,10 @@ int main(){
     // Initializes SDL and OpenGL while opening window
     InitializeProgram();
 
+    // Specifies VAO and VBO
     VertexSpecification();
 
-    // Creates shaders
+    // Creates shaders, both fragment and vector
     CreateGraphicsPipeline();
 
     // Continually draws over file
@@ -194,4 +195,6 @@ int main(){
 
     // Ends running subsystems
     CleanUp();
+
+    return 0;
 }
