@@ -181,6 +181,7 @@ void CleanUp(){
 }
 // Test
 int main(){
+    // Test
     // // Before we create our window, specify OpenGL version
     // // 2. copy our vertices array in a buffer for OpenGL to use
     // glBindBuffer(GL_ARRAY_BUFFER, VBO);
