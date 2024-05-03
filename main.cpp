@@ -2,32 +2,59 @@
 #include <glad/glad.h>
 #include <iostream>
 #include <vector>
+#include <string>
+#include <fstream>
+#include <glm/glm.hpp>
+#include <glm/vec3.hpp>
 
 // Current compile command
-//g++ main.cpp ./src/glad.c -I./include/ -std=c++11 -o a.out -lSDL2 -ldl
+//g++ main.cpp ./src/glad.c -I./include/ -I./include/glm-master -std=c++11 -o a.out -lSDL2 -ldl
 
 // Globals
 const int WINDOW_WIDTH = 640;
 const int WINDOW_HEIGHT = 480;
-const char *vertexShaderSource = "#version 330 core\n"
-    "layout (location = 0) in vec3 aPos;\n"
-    "void main()\n"
-    "{\n"
-    "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
-    "}\0";
-const char *fragmentShaderSource = "#version 330 core\n"
-    "out vec4 FragColor;\n"
-    "void main()\n"
-    "{\n"
-    "FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
-    "}\0";
+const std::string vertexShaderFileName = "./shaders/vertex.glsl";
+const std::string fragmentShaderFileName = "./shaders/frag.glsl";
 
 SDL_Window* graphicsWindow = nullptr;
 SDL_GLContext openGLContext = nullptr;
 bool gQuit = false;
 GLuint VBO = 0;
+GLuint IBO = 0;
 GLuint VAO = 0;
 GLuint GraphicsPipeline = 0;
+
+static void GLClearErrors(){
+    while(glGetError() != GL_NO_ERROR){
+    }
+}
+
+static bool GLCheckErrorStatus(const char* function, int line){
+    while(GLenum error = glGetError()){
+        std::cout << "ERROR:" << error << "\nLINE:" << line << "\nFUNCTION:" << function <<std::endl;
+        return true;
+    }
+    return false;
+}
+#define GLCheck(x) GLClearErrors(); x; GLCheckErrorStatus(#x, __LINE__ );
+std::string getFileString(const std::string& fileName){
+    try{
+        std::string result = "";
+        std::string line = "";
+        std::ifstream myFile(fileName.c_str());
+        if(myFile.is_open()){
+            while(std::getline(myFile, line)){
+                result += line + "\n";
+            }
+            myFile.close();
+        }
+        return result;
+    }
+    catch(std::exception& e){
+        std::cout << "File -" + fileName + "- unable to be opened" << std::endl;
+        exit(1);
+    }
+}
 
 void getOpenGLVersionInfo(){
     std::cout << "Vendor: " << glGetString(GL_VENDOR) << std::endl; 
@@ -59,7 +86,8 @@ void preDrawFunc(){
 void drawFunc(){
     glBindVertexArray(VAO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glDrawArrays(GL_TRIANGLES,0,3);
+    //glDrawArrays(GL_TRIANGLES,0,6);
+    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
     glUseProgram(0);
 }
 
@@ -84,12 +112,14 @@ void InitializeProgram(){
     }
     openGLContext = SDL_GL_CreateContext(graphicsWindow);
     if(openGLContext == nullptr){
-        std::cout << "Context not avaliable" << std::endl;
+        std::cout << "Context not avaliable" 
+            << std::endl;
         exit(1);
     }
     //Initialize Glad Libary
     if(!gladLoadGLLoader(SDL_GL_GetProcAddress)){
-        std::cout << "Glad unable to be initialized" << std::endl;
+        std::cout << "Glad unable to be initialized" 
+            << std::endl;
         exit(1);
     }
     getOpenGLVersionInfo();
@@ -116,6 +146,11 @@ GLuint CompileShader(GLuint type, const std::string& source){
     if(!success){
         glGetShaderInfoLog(shaderObject, 512, NULL, infoLog);
         std::cout << "ERROR::SHADER::COMPILATION_FAILED\n" << infoLog << std::endl;
+        if(type == GL_VERTEX_SHADER){
+            std::cout << "ERROR OCCURED IN VERTEX SHADER"<< std::endl;
+        }else if(type == GL_FRAGMENT_SHADER){
+            std::cout << "ERROR OCCURED IN FRAGMENT SHADER"<< std::endl;
+        }
         glDeleteShader(shaderObject);
         return 0;
     }
@@ -141,12 +176,29 @@ GLuint CreateShaderProgram(const std::string& vertexShaderSource, const std::str
     return programObject;
 }
 void CreateGraphicsPipeline(){
-    GraphicsPipeline = CreateShaderProgram(vertexShaderSource, fragmentShaderSource);
+    GraphicsPipeline = CreateShaderProgram(
+        getFileString(vertexShaderFileName), 
+        getFileString(fragmentShaderFileName));
 }
 
 void VertexSpecification(){
 
-    const std::vector<GLfloat> vertices{-0.8f, -0.8f, 0.0f, 0.8f, -0.8f, 0.0f, 0.0f, 0.8f, 0.0f};
+    const std::vector<GLfloat> verticeData{
+        // Vertex 0
+        -0.5f, -0.5f, 0.0f, // Vector
+        1.0f, 0.0f, 0.0f, // Color
+        // Vertex 1
+        0.5f, -0.5f, 0.0f, // Vector
+        0.0f, 1.0f, 0.0f, // Color
+        // Vertex 2
+        -0.5f, 0.5f, 0.0f, // Vector
+        0.0f, 0.0f, 1.0f, //Color
+        // Vertex 3
+        0.5f, 0.5f, 0.0f, // Vector
+        .0f, 0.0f, 1.0f, // Color
+    };
+
+    const std::vector<GLuint> indexBufferData{2,0,1, 3,2,1};
     // Generates VAO
     // Sets up on the GPU
     glGenVertexArrays(1, &VAO);
@@ -155,11 +207,20 @@ void VertexSpecification(){
     // Generates VBO
     glGenBuffers(1, &VBO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(GLfloat), vertices.data(), GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, verticeData.size() * sizeof(GLfloat), verticeData.data(), GL_STATIC_DRAW);
+
+    // Generates IBO
+    glGenBuffers(1, &IBO);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexBufferData.size()*sizeof(GLuint), indexBufferData.data(), GL_STATIC_DRAW);
+
     glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0,3, GL_FLOAT, GL_FALSE, 0, (void*)0);
+    glVertexAttribPointer(0,3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT)*6, (void*)0);
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1,3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT)*6, (void*)(sizeof(GL_FLOAT)*3));
     glBindVertexArray(0);
     glDisableVertexAttribArray(0);
+    glDisableVertexAttribArray(1);
 }
 
 void MainLoop(){
