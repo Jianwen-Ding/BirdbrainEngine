@@ -6,7 +6,8 @@
 #include <fstream>
 #include <glm/glm.hpp>
 #include <glm/vec3.hpp>
-
+#include <glm/mat4x4.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 // Current compile command
 //g++ main.cpp ./src/glad.c -I./include/ -I./include/glm-master -std=c++11 -o a.out -lSDL2 -ldl
 
@@ -23,7 +24,7 @@ GLuint VBO = 0;
 GLuint IBO = 0;
 GLuint VAO = 0;
 GLuint GraphicsPipeline = 0;
-
+GLfloat u_offSet = 0;
 static void GLClearErrors(){
     while(glGetError() != GL_NO_ERROR){
     }
@@ -71,6 +72,13 @@ void getInput(){
             gQuit = true;
         }
     }
+    const Uint8 *state = SDL_GetKeyboardState(NULL);
+    if(state[SDL_SCANCODE_UP]){
+        u_offSet += 0.01f;
+    }
+    if(state[SDL_SCANCODE_DOWN]){
+        u_offSet -= 0.01f;
+    }
 }
 
 void preDrawFunc(){
@@ -81,6 +89,24 @@ void preDrawFunc(){
     glClearColor(1.f, 1.f, 0.f, 1.f);
     glClear(GL_DEPTH_BUFFER_BIT| GL_COLOR_BUFFER_BIT);
     glUseProgram(GraphicsPipeline);
+    GLint perspectiveLoc= glGetUniformLocation(GraphicsPipeline, "u_perspectiveMat");
+    GLint translateLoc= glGetUniformLocation(GraphicsPipeline, "u_modelMat");
+    glm::mat4 perspectiveMatrix = glm::perspective(glm::radians(45.0f), (float)WINDOW_WIDTH/(float)WINDOW_HEIGHT, 0.1f, 10.0f);
+    glm::mat4 translationMatrix = glm::translate(glm::mat4x4(1.0f), glm::vec3(0.0f,0.0f,u_offSet));
+    if(perspectiveLoc >= 0){
+        glUniformMatrix4fv(perspectiveLoc, 1, GL_FALSE, &perspectiveMatrix[0][0]);
+    }
+    else{
+        std::cout << "error in u_prespectiveMat" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+    if(translateLoc >= 0){
+        glUniformMatrix4fv(translateLoc, 1, GL_FALSE, &translationMatrix[0][0]);
+    }
+    else{
+        std::cout << "error in u_modelMat" << std::endl;
+        exit(EXIT_FAILURE);
+    }
 }
 
 void drawFunc(){
