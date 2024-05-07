@@ -25,6 +25,7 @@ GLuint IBO = 0;
 GLuint VAO = 0;
 GLuint GraphicsPipeline = 0;
 GLfloat u_offSet = 0;
+GLfloat u_rotate = 0;
 static void GLClearErrors(){
     while(glGetError() != GL_NO_ERROR){
     }
@@ -74,10 +75,16 @@ void getInput(){
     }
     const Uint8 *state = SDL_GetKeyboardState(NULL);
     if(state[SDL_SCANCODE_UP]){
-        u_offSet += 0.01f;
+        u_offSet += 0.001f;
     }
     if(state[SDL_SCANCODE_DOWN]){
-        u_offSet -= 0.01f;
+        u_offSet -= 0.001f;
+    }
+    if(state[SDL_SCANCODE_LEFT]){
+        u_rotate += 0.1f;
+    }
+    if(state[SDL_SCANCODE_RIGHT]){
+        u_rotate -= 0.1f;
     }
 }
 
@@ -91,13 +98,15 @@ void preDrawFunc(){
     glUseProgram(GraphicsPipeline);
     GLint perspectiveLoc= glGetUniformLocation(GraphicsPipeline, "u_perspectiveMat");
     GLint translateLoc= glGetUniformLocation(GraphicsPipeline, "u_modelMat");
+    GLint rotationLoc = glGetUniformLocation(GraphicsPipeline, "u_rotationMat");
     glm::mat4 perspectiveMatrix = glm::perspective(glm::radians(45.0f), (float)WINDOW_WIDTH/(float)WINDOW_HEIGHT, 0.1f, 10.0f);
     glm::mat4 translationMatrix = glm::translate(glm::mat4x4(1.0f), glm::vec3(0.0f,0.0f,u_offSet));
+    glm::mat4 rotationMatrix = glm::rotate(glm::mat4x4(1.0f), glm::radians(45.0f + u_rotate), glm::vec3{0.0f,1.0f,0.0f});
     if(perspectiveLoc >= 0){
         glUniformMatrix4fv(perspectiveLoc, 1, GL_FALSE, &perspectiveMatrix[0][0]);
     }
     else{
-        std::cout << "error in u_prespectiveMat" << std::endl;
+        std::cout << "error in u_perspectiveMat" << std::endl;
         exit(EXIT_FAILURE);
     }
     if(translateLoc >= 0){
@@ -105,6 +114,13 @@ void preDrawFunc(){
     }
     else{
         std::cout << "error in u_modelMat" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+    if(rotationLoc >= 0){
+        glUniformMatrix4fv(rotationLoc, 1, GL_FALSE, &rotationMatrix[0][0]);
+    }
+    else{
+        std::cout << "error in u_rotationMat" << std::endl;
         exit(EXIT_FAILURE);
     }
 }
