@@ -1,4 +1,5 @@
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_surface.h>
 #include <glad/glad.h>
 #include <iostream>
 #include <vector>
@@ -7,9 +8,13 @@
 #include <glm/glm.hpp>
 #include <glm/vec3.hpp>
 #include <glm/mat4x4.hpp>
+#include <glm/gtc/quaternion.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+#include "Camera.hpp"
+#include "stb_image.h"
+
 // Current compile command
-//g++ main.cpp ./src/glad.c -I./include/ -I./include/glm-master -std=c++11 -o a.out -lSDL2 -ldl
+//g++ main.cpp ./src/* -I./include/ -I./include/glm-master -std=c++11 -o a.out -lSDL2 -ldl
 
 // Globals
 const int WINDOW_WIDTH = 640;
@@ -20,12 +25,20 @@ const std::string fragmentShaderFileName = "./shaders/frag.glsl";
 SDL_Window* graphicsWindow = nullptr;
 SDL_GLContext openGLContext = nullptr;
 bool gQuit = false;
+
+GLuint Texture1 = 0;
+GLuint Texture2 = 0;
 GLuint VBO = 0;
+GLuint lightVAO = 0;
 GLuint IBO = 0;
 GLuint VAO = 0;
 GLuint GraphicsPipeline = 0;
-GLfloat u_offSet = 0;
+
+GLfloat u_offSet = -5;
 GLfloat u_rotate = 0;
+GLfloat u_scale = 0.5;
+
+Camera viewCam;
 static void GLClearErrors(){
     while(glGetError() != GL_NO_ERROR){
     }
@@ -72,19 +85,23 @@ void getInput(){
             std::cout << "Terminating" << std::endl;
             gQuit = true;
         }
+        else if(e.type == SDL_MOUSEMOTION){
+            viewCam.mouseLook(e.motion.xrel,e.motion.yrel);
+        }
     }
+    u_rotate -= 0.0001f;
     const Uint8 *state = SDL_GetKeyboardState(NULL);
     if(state[SDL_SCANCODE_UP]){
-        u_offSet += 0.001f;
+        viewCam.moveFoward(0.001f);
     }
     if(state[SDL_SCANCODE_DOWN]){
-        u_offSet -= 0.001f;
+        viewCam.moveBackwards(0.001f);
     }
     if(state[SDL_SCANCODE_LEFT]){
-        u_rotate += 0.1f;
+        viewCam.moveLeft(0.001f);
     }
     if(state[SDL_SCANCODE_RIGHT]){
-        u_rotate -= 0.1f;
+        viewCam.moveRight(0.001f);
     }
 }
 
@@ -96,12 +113,21 @@ void preDrawFunc(){
     glClearColor(1.f, 1.f, 0.f, 1.f);
     glClear(GL_DEPTH_BUFFER_BIT| GL_COLOR_BUFFER_BIT);
     glUseProgram(GraphicsPipeline);
+    GLint viewLoc = glGetUniformLocation(GraphicsPipeline, "u_viewMat");
     GLint perspectiveLoc= glGetUniformLocation(GraphicsPipeline, "u_perspectiveMat");
-    GLint translateLoc= glGetUniformLocation(GraphicsPipeline, "u_modelMat");
-    GLint rotationLoc = glGetUniformLocation(GraphicsPipeline, "u_rotationMat");
+    GLint modelLoc= glGetUniformLocation(GraphicsPipeline, "u_modelMat");
+    GLint transformLoc1 = glGetUniformLocation(GraphicsPipeline, "u_givenTexture1");
+    GLint transformLoc2 = glGetUniformLocation(GraphicsPipeline, "u_givenTexture2");
+    glm::mat4 viewMatrix = viewCam.getViewMat();
     glm::mat4 perspectiveMatrix = glm::perspective(glm::radians(45.0f), (float)WINDOW_WIDTH/(float)WINDOW_HEIGHT, 0.1f, 10.0f);
-    glm::mat4 translationMatrix = glm::translate(glm::mat4x4(1.0f), glm::vec3(0.0f,0.0f,u_offSet));
-    glm::mat4 rotationMatrix = glm::rotate(glm::mat4x4(1.0f), glm::radians(45.0f + u_rotate), glm::vec3{0.0f,1.0f,0.0f});
+    glm::mat4 modelMatrix = glm::mat4x4(1.0f);
+    glm::quat testQuat = glm::normalize(glm::quat(1.0f,0.0f,0.0f,0.0f));
+    glm::quat test2Quat = glm::normalize(glm::quat(cos(u_rotate),0.0f,sin(u_rotate),0.0f));
+    glm::quat test3Quat = testQuat * test2Quat;
+    glm::mat4 rotationMatrix = glm::mat4_cast(test3Quat);
+    modelMatrix = glm::translate(modelMatrix, glm::vec3(0.0f,0.0f,u_offSet));
+    modelMatrix = modelMatrix * rotationMatrix;
+    modelMatrix = glm::scale(modelMatrix, glm::vec3(u_scale,u_scale,u_scale));
     if(perspectiveLoc >= 0){
         glUniformMatrix4fv(perspectiveLoc, 1, GL_FALSE, &perspectiveMatrix[0][0]);
     }
@@ -109,25 +135,43 @@ void preDrawFunc(){
         std::cout << "error in u_perspectiveMat" << std::endl;
         exit(EXIT_FAILURE);
     }
-    if(translateLoc >= 0){
-        glUniformMatrix4fv(translateLoc, 1, GL_FALSE, &translationMatrix[0][0]);
+    if(modelLoc >= 0){
+        glUniformMatrix4fv(modelLoc, 1, GL_FALSE, &modelMatrix[0][0]);
     }
     else{
         std::cout << "error in u_modelMat" << std::endl;
         exit(EXIT_FAILURE);
     }
-    if(rotationLoc >= 0){
-        glUniformMatrix4fv(rotationLoc, 1, GL_FALSE, &rotationMatrix[0][0]);
+    if(viewLoc >= 0){
+        glUniformMatrix4fv(viewLoc, 1, GL_FALSE, &viewMatrix[0][0]);
     }
     else{
-        std::cout << "error in u_rotationMat" << std::endl;
+        std::cout << "error in u_viewMat" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+    if(transformLoc1 >= 0){
+        glUniform1i(transformLoc1, 0);
+    }
+    else{
+        std::cout << "error in u_transformLoc1" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+    if(transformLoc2 >= 0){
+        glUniform1i(transformLoc1, 1);
+    }
+    else{
+        std::cout << "error in u_transformLoc2" << std::endl;
         exit(EXIT_FAILURE);
     }
 }
 
 void drawFunc(){
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, Texture1);
+    glActiveTexture(GL_TEXTURE1);
+    glBindTexture(GL_TEXTURE_2D, Texture2);
+
     glBindVertexArray(VAO);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
     //glDrawArrays(GL_TRIANGLES,0,6);
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
     glUseProgram(0);
@@ -229,17 +273,39 @@ void VertexSpecification(){
         // Vertex 0
         -0.5f, -0.5f, 0.0f, // Vector
         1.0f, 0.0f, 0.0f, // Color
+        0.0f,0.0f,          // Texture map
         // Vertex 1
         0.5f, -0.5f, 0.0f, // Vector
         0.0f, 1.0f, 0.0f, // Color
+        2.0f,0.0f,          // Texture map
         // Vertex 2
         -0.5f, 0.5f, 0.0f, // Vector
         0.0f, 0.0f, 1.0f, //Color
+        0.0f,2.0f,          // Texture map
         // Vertex 3
         0.5f, 0.5f, 0.0f, // Vector
-        .0f, 0.0f, 1.0f, // Color
+        0.0f, 0.0f, 1.0f, // Color
+        2.0f,2.0f,          // Texture map
     };
 
+    const std::vector<GLfloat> lightVerticeData{
+        // Vertex 0
+        -0.5f, -0.5f, 0.0f, // Vector
+        1.0f, 0.0f, 0.0f, // Color
+        0.0f,0.0f,          // Texture map
+        // Vertex 1
+        0.5f, -0.5f, 0.0f, // Vector
+        0.0f, 1.0f, 0.0f, // Color
+        2.0f,0.0f,          // Texture map
+        // Vertex 2
+        -0.5f, 0.5f, 0.0f, // Vector
+        0.0f, 0.0f, 1.0f, //Color
+        0.0f,2.0f,          // Texture map
+        // Vertex 3
+        0.5f, 0.5f, 0.0f, // Vector
+        0.0f, 0.0f, 1.0f, // Color
+        2.0f,2.0f,          // Texture map
+    };
     const std::vector<GLuint> indexBufferData{2,0,1, 3,2,1};
     // Generates VAO
     // Sets up on the GPU
@@ -256,10 +322,75 @@ void VertexSpecification(){
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexBufferData.size()*sizeof(GLuint), indexBufferData.data(), GL_STATIC_DRAW);
 
+    // Generates Texture
+    // Texture 1
+    glGenTextures(1, &Texture1);
+    glBindTexture(GL_TEXTURE_2D, Texture1);
+    // Configures options
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    // Loads an generates texture
+    int tWidth;
+    int tHeight;
+    int tNRChannels;
+    stbi_set_flip_vertically_on_load(true);
+    unsigned char *tData = stbi_load("./textures/testTexture.jpeg", &tWidth, &tHeight, &tNRChannels, 0);
+    if(tData){
+
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, tWidth, tHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, tData);
+        glGenerateMipmap(GL_TEXTURE_2D);
+        stbi_image_free(tData);
+    }
+    else{
+        std::cout << "Error in texture1 loading" << std::endl;
+        exit(1);
+    }
+    // Texture 2
+    glGenTextures(1, &Texture2);
+    glBindTexture(GL_TEXTURE_2D, Texture2); 
+    // Configures options
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    // Loads an generates texture
+
+    tData = stbi_load("./textures/awesomeface.png", &tWidth, &tHeight, &tNRChannels, 0);
+    if(tData){
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, tWidth, tHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, tData);
+        glGenerateMipmap(GL_TEXTURE_2D);
+        stbi_image_free(tData);
+    }
+    else{
+        std::cout << "Error in texture2 loading" << std::endl;
+        exit(1);
+    }
+
     glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0,3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT)*6, (void*)0);
+    glVertexAttribPointer(0,3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT)*8, (void*)0);
     glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1,3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT)*6, (void*)(sizeof(GL_FLOAT)*3));
+    glVertexAttribPointer(1,3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT)*8, (void*)(sizeof(GL_FLOAT)*3));
+    glEnableVertexAttribArray(2);
+    glVertexAttribPointer(2,3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT)*8, (void*)(sizeof(GL_FLOAT)*6));
+    glBindVertexArray(0);
+    glDisableVertexAttribArray(0);
+    glDisableVertexAttribArray(1);
+
+    // Generates light VAO
+        // Generates VAO
+    // Sets up on the GPU
+    glGenVertexArrays(1, &lightVAO);
+    glBindVertexArray(lightVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0,3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT)*8, (void*)0);
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1,3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT)*8, (void*)(sizeof(GL_FLOAT)*3));
+    glEnableVertexAttribArray(2);
+    glVertexAttribPointer(2,3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT)*8, (void*)(sizeof(GL_FLOAT)*6));
     glBindVertexArray(0);
     glDisableVertexAttribArray(0);
     glDisableVertexAttribArray(1);
