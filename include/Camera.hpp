@@ -21,6 +21,8 @@ class Camera{
         void moveBackwards(float speed);
         void moveLeft(float speed);
         void moveRight(float speed);
+        void moveUp(float speed);
+        void moveDown(float speed);
     
 };
 #endif

@@ -13,30 +13,45 @@
 #include "Camera.hpp"
 #include "stb_image.h"
 
+#define GLCheck(x) GLClearErrors(); x; GLCheckErrorStatus(#x, __LINE__ );
+
 // Current compile command
 //g++ main.cpp ./src/* -I./include/ -I./include/glm-master -std=c++11 -o a.out -lSDL2 -ldl
 
 // Globals
 const int WINDOW_WIDTH = 640;
 const int WINDOW_HEIGHT = 480;
-const std::string vertexShaderFileName = "./shaders/vertex.glsl";
-const std::string fragmentShaderFileName = "./shaders/frag.glsl";
 
 SDL_Window* graphicsWindow = nullptr;
 SDL_GLContext openGLContext = nullptr;
 bool gQuit = false;
 
+// Textures
 GLuint Texture1 = 0;
 GLuint Texture2 = 0;
+
+/// Vertice specifiers (VAOs, VBOs, IBOs)
 GLuint VBO = 0;
-GLuint lightVAO = 0;
 GLuint IBO = 0;
 GLuint VAO = 0;
-GLuint GraphicsPipeline = 0;
+GLuint lightVAO = 0;
+GLuint lightVBO = 0;
 
+// Shaders
+const std::string vertexShaderFileName = "./shaders/vertex.glsl";
+const std::string fragmentShaderFileName = "./shaders/frag.glsl";
+const std::string lightFragmentShaderFileName = "./shaders/lightFrag.glsl";
+GLuint GraphicsPipeline = 0;
+GLuint LightGraphicsPipeline = 0;
+
+// Transform variables
 GLfloat u_offSet = -5;
 GLfloat u_rotate = 0;
 GLfloat u_scale = 0.5;
+
+// Lighting variables
+GLfloat ambienceVal = 0.1f;
+glm::vec3 lightPos = glm::vec3(1.0f,1.0f,1.0f);
 
 Camera viewCam;
 static void GLClearErrors(){
@@ -51,7 +66,7 @@ static bool GLCheckErrorStatus(const char* function, int line){
     }
     return false;
 }
-#define GLCheck(x) GLClearErrors(); x; GLCheckErrorStatus(#x, __LINE__ );
+
 std::string getFileString(const std::string& fileName){
     try{
         std::string result = "";
@@ -103,21 +118,65 @@ void getInput(){
     if(state[SDL_SCANCODE_RIGHT]){
         viewCam.moveRight(0.001f);
     }
+    if(state[SDL_SCANCODE_LSHIFT]){
+        viewCam.moveDown(0.001f);
+    }
+    if(state[SDL_SCANCODE_SPACE]){
+        viewCam.moveUp(0.001f);
+    }
 }
 
+void insertUniform1f(GLfloat insert, const char* name, GLuint shaderProgram){
+    GLint location = glGetUniformLocation(shaderProgram, name);
+    if(location >= 0){
+        glUniform1f(location, insert);
+    }
+    else{
+        std::cout << "error in -" << name << "- possibly an error in spelling" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+}
+void insertUniform1i(GLint textureLoc, const char* name, GLuint shaderProgram){
+    GLint location = glGetUniformLocation(shaderProgram, name);
+    if(location >= 0){
+        glUniform1i(location, textureLoc);
+    }
+    else{
+        std::cout << "error in -" << name << "- possibly an error in spelling" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+}
+void insertUniform3f(glm::vec3 insert, const char* name, GLuint shaderProgram){
+    GLint location = glGetUniformLocation(shaderProgram, name);
+    if(location >= 0){
+        glUniform3f(location, insert.x, insert.y, insert.z);
+    }
+    else{
+        std::cout << "error in -" << name << "- possibly an error in spelling" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+}
+void insertUniformMatrix4fv(glm::mat4x4 insert, const char* name, GLuint shaderProgram){
+    GLint location = glGetUniformLocation(shaderProgram, name);
+    if(location >= 0){
+        glUniformMatrix4fv(location, 1, GL_FALSE, &insert[0][0]);
+    }
+    else{
+        std::cout << "error in -" << name << "- possibly an error in spelling" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+}
 void preDrawFunc(){
     glDisable(GL_DEPTH_TEST);
     glDisable(GL_CULL_FACE);
-
     glViewport(0,0,WINDOW_WIDTH, WINDOW_HEIGHT);
     glClearColor(1.f, 1.f, 0.f, 1.f);
     glClear(GL_DEPTH_BUFFER_BIT| GL_COLOR_BUFFER_BIT);
+    glEnable(GL_DEPTH_TEST);
+
+    // Main shader implementation
     glUseProgram(GraphicsPipeline);
-    GLint viewLoc = glGetUniformLocation(GraphicsPipeline, "u_viewMat");
-    GLint perspectiveLoc= glGetUniformLocation(GraphicsPipeline, "u_perspectiveMat");
-    GLint modelLoc= glGetUniformLocation(GraphicsPipeline, "u_modelMat");
-    GLint transformLoc1 = glGetUniformLocation(GraphicsPipeline, "u_givenTexture1");
-    GLint transformLoc2 = glGetUniformLocation(GraphicsPipeline, "u_givenTexture2");
+    // Create transformation matrices
     glm::mat4 viewMatrix = viewCam.getViewMat();
     glm::mat4 perspectiveMatrix = glm::perspective(glm::radians(45.0f), (float)WINDOW_WIDTH/(float)WINDOW_HEIGHT, 0.1f, 10.0f);
     glm::mat4 modelMatrix = glm::mat4x4(1.0f);
@@ -125,55 +184,40 @@ void preDrawFunc(){
     glm::quat test2Quat = glm::normalize(glm::quat(cos(u_rotate),0.0f,sin(u_rotate),0.0f));
     glm::quat test3Quat = testQuat * test2Quat;
     glm::mat4 rotationMatrix = glm::mat4_cast(test3Quat);
+    glm::mat4 lightModelMatrix = glm::translate(modelMatrix, glm::vec3(u_offSet/5,-u_offSet/5,u_offSet));
     modelMatrix = glm::translate(modelMatrix, glm::vec3(0.0f,0.0f,u_offSet));
     modelMatrix = modelMatrix * rotationMatrix;
+    lightModelMatrix = lightModelMatrix * rotationMatrix;
     modelMatrix = glm::scale(modelMatrix, glm::vec3(u_scale,u_scale,u_scale));
-    if(perspectiveLoc >= 0){
-        glUniformMatrix4fv(perspectiveLoc, 1, GL_FALSE, &perspectiveMatrix[0][0]);
-    }
-    else{
-        std::cout << "error in u_perspectiveMat" << std::endl;
-        exit(EXIT_FAILURE);
-    }
-    if(modelLoc >= 0){
-        glUniformMatrix4fv(modelLoc, 1, GL_FALSE, &modelMatrix[0][0]);
-    }
-    else{
-        std::cout << "error in u_modelMat" << std::endl;
-        exit(EXIT_FAILURE);
-    }
-    if(viewLoc >= 0){
-        glUniformMatrix4fv(viewLoc, 1, GL_FALSE, &viewMatrix[0][0]);
-    }
-    else{
-        std::cout << "error in u_viewMat" << std::endl;
-        exit(EXIT_FAILURE);
-    }
-    if(transformLoc1 >= 0){
-        glUniform1i(transformLoc1, 0);
-    }
-    else{
-        std::cout << "error in u_transformLoc1" << std::endl;
-        exit(EXIT_FAILURE);
-    }
-    if(transformLoc2 >= 0){
-        glUniform1i(transformLoc1, 1);
-    }
-    else{
-        std::cout << "error in u_transformLoc2" << std::endl;
-        exit(EXIT_FAILURE);
-    }
+    lightModelMatrix = glm::scale(lightModelMatrix, glm::vec3(u_scale/3,u_scale/3,u_scale/3));
+    // Inserting into uniform variables
+    insertUniformMatrix4fv(perspectiveMatrix, "u_perspectiveMat", GraphicsPipeline);
+    insertUniformMatrix4fv(modelMatrix, "u_modelMat", GraphicsPipeline);
+    insertUniformMatrix4fv(viewMatrix, "u_viewMat", GraphicsPipeline);
+    insertUniform3f(glm::vec3(1.0f), "u_lightColor", GraphicsPipeline);
+    insertUniform1i(0, "u_givenTexture1", GraphicsPipeline);
+    insertUniform1i(1, "u_givenTexture2", GraphicsPipeline);
+    insertUniform1f(ambienceVal, "u_ambienceStrength", GraphicsPipeline);
+    // Light shader implementations
+    glUseProgram(LightGraphicsPipeline);
+    insertUniformMatrix4fv(perspectiveMatrix, "u_perspectiveMat", LightGraphicsPipeline);
+    insertUniformMatrix4fv(lightModelMatrix, "u_modelMat", LightGraphicsPipeline);
+    insertUniformMatrix4fv(viewMatrix, "u_viewMat", LightGraphicsPipeline);
 }
 
 void drawFunc(){
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, Texture1);
-    glActiveTexture(GL_TEXTURE1);
-    glBindTexture(GL_TEXTURE_2D, Texture2);
-
+    GLCheck(glActiveTexture(GL_TEXTURE0);)
+    GLCheck(glBindTexture(GL_TEXTURE_2D, Texture1);)
+    GLCheck(glActiveTexture(GL_TEXTURE1);)
+    GLCheck(glBindTexture(GL_TEXTURE_2D, Texture2);)
+    glUseProgram(GraphicsPipeline);
     glBindVertexArray(VAO);
-    //glDrawArrays(GL_TRIANGLES,0,6);
-    glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+    glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+
+    glUseProgram(LightGraphicsPipeline);
+    glBindVertexArray(lightVAO);
+    glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+    
     glUseProgram(0);
 }
 
@@ -209,7 +253,6 @@ void InitializeProgram(){
         exit(1);
     }
     getOpenGLVersionInfo();
-
 }
 
 GLuint CompileShader(GLuint type, const std::string& source){
@@ -265,48 +308,67 @@ void CreateGraphicsPipeline(){
     GraphicsPipeline = CreateShaderProgram(
         getFileString(vertexShaderFileName), 
         getFileString(fragmentShaderFileName));
+    LightGraphicsPipeline = CreateShaderProgram(
+        getFileString(vertexShaderFileName), 
+        getFileString(lightFragmentShaderFileName));
 }
 
 void VertexSpecification(){
 
     const std::vector<GLfloat> verticeData{
         // Vertex 0
-        -0.5f, -0.5f, 0.0f, // Vector
+        -0.5f, -0.5f, -0.5f, // Vector
         1.0f, 0.0f, 0.0f, // Color
         0.0f,0.0f,          // Texture map
         // Vertex 1
-        0.5f, -0.5f, 0.0f, // Vector
+        0.5f, -0.5f, -0.5f, // Vector
+        0.0f, 1.0f, 0.0f, // Color
+        1.0f,0.0f,          // Texture map
+        // Vertex 2
+        -0.5f, 0.5f, -0.5f, // Vector
+        0.0f, 0.0f, 1.0f, //Color
+        0.0f,1.0f,          // Texture map
+        // Vertex 3
+        0.5f, 0.5f, -0.5f, // Vector
+        0.0f, 0.0f, 1.0f, // Color
+        1.0f,1.0f,          // Texture map
+        // Vertex 4
+        -0.5f, -0.5f, 0.5f, // Vector
+        1.0f, 0.0f, 0.0f, // Color
+        1.0f,0.0f,          // Texture map
+        // Vertex 5
+        0.5f, -0.5f, 0.5f, // Vector
         0.0f, 1.0f, 0.0f, // Color
         2.0f,0.0f,          // Texture map
-        // Vertex 2
-        -0.5f, 0.5f, 0.0f, // Vector
+        // Vertex 6
+        -0.5f, 0.5f, 0.5f, // Vector
         0.0f, 0.0f, 1.0f, //Color
-        0.0f,2.0f,          // Texture map
-        // Vertex 3
-        0.5f, 0.5f, 0.0f, // Vector
+        1.0f,1.0f,          // Texture map
+        // Vertex 7
+        0.5f, 0.5f, 0.5f, // Vector
         0.0f, 0.0f, 1.0f, // Color
-        2.0f,2.0f,          // Texture map
+        2.0f,1.0f,          // Texture map
     };
 
     const std::vector<GLfloat> lightVerticeData{
         // Vertex 0
-        -0.5f, -0.5f, 0.0f, // Vector
-        1.0f, 0.0f, 0.0f, // Color
-        0.0f,0.0f,          // Texture map
+        -0.5f, -0.5f, -0.5f, // Vector
         // Vertex 1
-        0.5f, -0.5f, 0.0f, // Vector
-        0.0f, 1.0f, 0.0f, // Color
-        2.0f,0.0f,          // Texture map
+        0.5f, -0.5f, -0.5f, // Vector
         // Vertex 2
-        -0.5f, 0.5f, 0.0f, // Vector
-        0.0f, 0.0f, 1.0f, //Color
-        0.0f,2.0f,          // Texture map
+        -0.5f, 0.5f, -0.5f, // Vector
         // Vertex 3
-        0.5f, 0.5f, 0.0f, // Vector
-        0.0f, 0.0f, 1.0f, // Color
-        2.0f,2.0f,          // Texture map
+        0.5f, 0.5f, -0.5f, // Vector
+        // Vertex 4
+        -0.5f, -0.5f, 0.5f, // Vector
+        // Vertex 5
+        0.5f, -0.5f, 0.5f, // Vector
+        // Vertex 6
+        -0.5f, 0.5f, 0.5f, // Vector
+        // Vertex 7
+        0.5f, 0.5f, 0.5f, // Vector
     };
-    const std::vector<GLuint> indexBufferData{2,0,1, 3,2,1};
+    const std::vector<GLuint> indexBufferData{2,0,1, 3,2,1, 5,4,6, 5,6,7, 4,0,2, 6,4,2, 5,1,3, 7,5,3, 6,2,3, 7,6,3, 4,0,1, 5,4,1};
     // Generates VAO
     // Sets up on the GPU
     glGenVertexArrays(1, &VAO);
@@ -339,7 +401,7 @@ void VertexSpecification(){
     unsigned char *tData = stbi_load("./textures/testTexture.jpeg", &tWidth, &tHeight, &tNRChannels, 0);
     if(tData){
 
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, tWidth, tHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, tData);
+        GLCheck(glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, tWidth, tHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, tData);)
         glGenerateMipmap(GL_TEXTURE_2D);
         stbi_image_free(tData);
     }
@@ -359,7 +421,7 @@ void VertexSpecification(){
 
     tData = stbi_load("./textures/awesomeface.png", &tWidth, &tHeight, &tNRChannels, 0);
     if(tData){
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, tWidth, tHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, tData);
+        GLCheck(glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, tWidth, tHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, tData);)
         glGenerateMipmap(GL_TEXTURE_2D);
         stbi_image_free(tData);
     }
@@ -367,7 +429,8 @@ void VertexSpecification(){
         std::cout << "Error in texture2 loading" << std::endl;
         exit(1);
     }
-
+    
+    // Connects data
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0,3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT)*8, (void*)0);
     glEnableVertexAttribArray(1);
@@ -377,23 +440,25 @@ void VertexSpecification(){
     glBindVertexArray(0);
     glDisableVertexAttribArray(0);
     glDisableVertexAttribArray(1);
+    glDisableVertexAttribArray(2);
 
     // Generates light VAO
-        // Generates VAO
-    // Sets up on the GPU
+    // Generates VAO
     glGenVertexArrays(1, &lightVAO);
     glBindVertexArray(lightVAO);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+
+    // Generates VBO
+    glGenBuffers(1, &lightVBO);
+    glBindBuffer(GL_ARRAY_BUFFER, lightVBO);
+    glBufferData(GL_ARRAY_BUFFER, lightVerticeData.size() * sizeof(GLfloat), lightVerticeData.data(), GL_STATIC_DRAW);
+
+    //Binds IBO
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
+
     glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0,3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT)*8, (void*)0);
-    glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1,3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT)*8, (void*)(sizeof(GL_FLOAT)*3));
-    glEnableVertexAttribArray(2);
-    glVertexAttribPointer(2,3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT)*8, (void*)(sizeof(GL_FLOAT)*6));
+    glVertexAttribPointer(0,3, GL_FLOAT, GL_FALSE, 0, (void*)0);
     glBindVertexArray(0);
     glDisableVertexAttribArray(0);
-    glDisableVertexAttribArray(1);
 }
 
 void MainLoop(){

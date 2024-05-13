@@ -40,3 +40,9 @@ void Camera::moveLeft(float speed){
 void Camera::moveRight(float speed){
     eye += glm::cross(getFowardVec(), glm::vec3(0.0f,1.0f,0.0f)) * speed;
 }
+void Camera::moveUp(float speed){
+    eye.y += speed;
+}
+void Camera::moveDown(float speed){
+    eye.y -= speed;
+}
