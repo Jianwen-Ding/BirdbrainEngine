@@ -50,7 +50,7 @@ GLfloat u_rotate = 0;
 GLfloat u_scale = 0.5;
 
 // Lighting variables
-GLfloat ambienceVal = 0.1f;
+GLfloat ambienceVal = 1.0f;
 glm::vec3 lightPos = glm::vec3(1.0f,1.0f,1.0f);
 
 Camera viewCam;
@@ -106,16 +106,16 @@ void getInput(){
     }
     u_rotate -= 0.0001f;
     const Uint8 *state = SDL_GetKeyboardState(NULL);
-    if(state[SDL_SCANCODE_UP]){
+    if(state[SDL_SCANCODE_UP]||state[SDL_SCANCODE_W]){
         viewCam.moveFoward(0.001f);
     }
-    if(state[SDL_SCANCODE_DOWN]){
+    if(state[SDL_SCANCODE_DOWN]||state[SDL_SCANCODE_S]){
         viewCam.moveBackwards(0.001f);
     }
-    if(state[SDL_SCANCODE_LEFT]){
+    if(state[SDL_SCANCODE_LEFT]||state[SDL_SCANCODE_A]){
         viewCam.moveLeft(0.001f);
     }
-    if(state[SDL_SCANCODE_RIGHT]){
+    if(state[SDL_SCANCODE_RIGHT]||state[SDL_SCANCODE_D]){
         viewCam.moveRight(0.001f);
     }
     if(state[SDL_SCANCODE_LSHIFT]){
@@ -318,36 +318,36 @@ void VertexSpecification(){
     const std::vector<GLfloat> verticeData{
         // Vertex 0
         -0.5f, -0.5f, -0.5f, // Vector
-        1.0f, 0.0f, 0.0f, // Color
-        0.0f,0.0f,          // Texture map
+        1.0f, 0.0f, 0.0f,   // Color
+        0.0f,0.0f,         // Texture map
         // Vertex 1
         0.5f, -0.5f, -0.5f, // Vector
-        0.0f, 1.0f, 0.0f, // Color
-        1.0f,0.0f,          // Texture map
+        0.0f, 1.0f, 0.0f,  // Color
+        1.0f,0.0f,        // Texture map
         // Vertex 2
         -0.5f, 0.5f, -0.5f, // Vector
-        0.0f, 0.0f, 1.0f, //Color
-        0.0f,1.0f,          // Texture map
+        0.0f, 0.0f, 1.0f,  //Color
+        0.0f,1.0f,        // Texture map
         // Vertex 3
         0.5f, 0.5f, -0.5f, // Vector
         0.0f, 0.0f, 1.0f, // Color
-        1.0f,1.0f,          // Texture map
+        1.0f,1.0f,        // Texture map
         // Vertex 4
         -0.5f, -0.5f, 0.5f, // Vector
-        1.0f, 0.0f, 0.0f, // Color
-        1.0f,0.0f,          // Texture map
+        1.0f, 0.0f, 0.0f,  // Color
+        1.0f,0.0f,        // Texture map
         // Vertex 5
         0.5f, -0.5f, 0.5f, // Vector
         0.0f, 1.0f, 0.0f, // Color
-        2.0f,0.0f,          // Texture map
+        2.0f,0.0f,       // Texture map
         // Vertex 6
         -0.5f, 0.5f, 0.5f, // Vector
         0.0f, 0.0f, 1.0f, //Color
-        1.0f,1.0f,          // Texture map
+        1.0f,1.0f,       // Texture map
         // Vertex 7
         0.5f, 0.5f, 0.5f, // Vector
-        0.0f, 0.0f, 1.0f, // Color
-        2.0f,1.0f,          // Texture map
+        0.0f, 0.0f, 1.0f,// Color
+        2.0f,1.0f,      // Texture map
     };
 
     const std::vector<GLfloat> lightVerticeData{
