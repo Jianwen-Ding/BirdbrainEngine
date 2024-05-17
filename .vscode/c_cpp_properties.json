@@ -3,7 +3,10 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/include",
+                "${workspaceFolder}/import/import_include/",
+                "${workspaceFolder}/import/import_include/glm-master"
             ],
             "defines": [],
             "macFrameworkPath": [
@@ -12,7 +15,8 @@
             "compilerPath": "/usr/bin/clang",
             "cStandard": "c17",
             "cppStandard": "c++17",
-            "intelliSenseMode": "macos-clang-arm64"
+            "intelliSenseMode": "macos-clang-arm64",
+            "compilerArgs": []
         }
     ],
     "version": 4

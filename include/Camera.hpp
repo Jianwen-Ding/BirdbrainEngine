@@ -4,13 +4,22 @@
 #include "glm/glm.hpp"
 #include "glm/gtc/quaternion.hpp"
 
+// Deals with creating view matrix
+// Repersenents virtual camera
 class Camera{
     private:
+        // Creates View Matrix
         glm::vec3 eye;
         glm::quat viewOrientation;
         glm::vec3 upVector;
         glm::vec2 oldMousePosition;
+
+        // Handles Perspective Matrix
+        float fov;
+        float viewCloseCutoff;
+        float viewFarCutoff;
     public:
+        // Constructor
         Camera();
 
         glm::mat4 getViewMat() const;

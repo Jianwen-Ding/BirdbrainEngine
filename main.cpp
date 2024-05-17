@@ -1,5 +1,4 @@
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_surface.h>
 #include <glad/glad.h>
 #include <iostream>
 #include <vector>
@@ -16,7 +15,7 @@
 #define GLCheck(x) GLClearErrors(); x; GLCheckErrorStatus(#x, __LINE__ );
 
 // Current compile command
-//g++ main.cpp ./src/* -I./include/ -I./include/glm-master -std=c++11 -o a.out -lSDL2 -ldl
+//g++ main.cpp ./import/import_src/* ./src/* -I./import/import_include/ -I./include/ -I./import/import_include/glm-master -std=c++11 -o a.out -lSDL2 -ldl
 
 // Globals
 const int WINDOW_WIDTH = 640;
@@ -36,11 +35,12 @@ GLuint IBO = 0;
 GLuint VAO = 0;
 GLuint lightVAO = 0;
 GLuint lightVBO = 0;
+GLuint lightIBO = 0;
 
 // Shaders
-const std::string vertexShaderFileName = "./shaders/vertex.glsl";
-const std::string fragmentShaderFileName = "./shaders/frag.glsl";
-const std::string lightFragmentShaderFileName = "./shaders/lightFrag.glsl";
+const std::string vertexShaderFileName = "./resources/shaders/vertex.glsl";
+const std::string fragmentShaderFileName = "./resources/shaders/frag.glsl";
+const std::string lightFragmentShaderFileName = "./resources/shaders/lightFrag.glsl";
 GLuint GraphicsPipeline = 0;
 GLuint LightGraphicsPipeline = 0;
 
@@ -212,10 +212,13 @@ void drawFunc(){
     GLCheck(glBindTexture(GL_TEXTURE_2D, Texture2);)
     glUseProgram(GraphicsPipeline);
     glBindVertexArray(VAO);
+    glBindBuffer(GL_ARRAY_BUFFER,VBO);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
     glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
 
     glUseProgram(LightGraphicsPipeline);
-    glBindVertexArray(lightVAO);
+    glBindBuffer(GL_ARRAY_BUFFER,lightVBO);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, lightIBO);
     glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
     
     glUseProgram(0);
@@ -369,6 +372,7 @@ void VertexSpecification(){
         0.5f, 0.5f, 0.5f, // Vector
     };
     const std::vector<GLuint> indexBufferData{2,0,1, 3,2,1, 5,4,6, 5,6,7, 4,0,2, 6,4,2, 5,1,3, 7,5,3, 6,2,3, 7,6,3, 4,0,1, 5,4,1};
+    const std::vector<GLuint> lightIndexBufferData{2,0,1};
     // Generates VAO
     // Sets up on the GPU
     glGenVertexArrays(1, &VAO);
@@ -398,7 +402,7 @@ void VertexSpecification(){
     int tHeight;
     int tNRChannels;
     stbi_set_flip_vertically_on_load(true);
-    unsigned char *tData = stbi_load("./textures/testTexture.jpeg", &tWidth, &tHeight, &tNRChannels, 0);
+    unsigned char *tData = stbi_load("./resources/textures/testTexture.jpeg", &tWidth, &tHeight, &tNRChannels, 0);
     if(tData){
 
         GLCheck(glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, tWidth, tHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, tData);)
@@ -419,7 +423,7 @@ void VertexSpecification(){
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     // Loads an generates texture
 
-    tData = stbi_load("./textures/awesomeface.png", &tWidth, &tHeight, &tNRChannels, 0);
+    tData = stbi_load("./resources/textures/awesomeface.png", &tWidth, &tHeight, &tNRChannels, 0);
     if(tData){
         GLCheck(glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, tWidth, tHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, tData);)
         glGenerateMipmap(GL_TEXTURE_2D);
@@ -452,8 +456,10 @@ void VertexSpecification(){
     glBindBuffer(GL_ARRAY_BUFFER, lightVBO);
     glBufferData(GL_ARRAY_BUFFER, lightVerticeData.size() * sizeof(GLfloat), lightVerticeData.data(), GL_STATIC_DRAW);
 
-    //Binds IBO
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
+    //Generates IBO
+    glGenBuffers(1, &lightIBO);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, lightIBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, lightIndexBufferData.size()*sizeof(GLuint), lightIndexBufferData.data(), GL_STATIC_DRAW);
 
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0,3, GL_FLOAT, GL_FALSE, 0, (void*)0);
