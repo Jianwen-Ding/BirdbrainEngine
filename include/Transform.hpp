@@ -3,7 +3,7 @@
 
 // C++
 #include <glad/glad.h>
-å
+
 // Math Libary
 #include "glm/glm.hpp"
 #include "glm/gtc/quaternion.hpp"
