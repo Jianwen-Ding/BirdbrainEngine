@@ -1,8 +1,8 @@
 #ifndef CAMERA_HPP
 #define CAMERA_HPP
 
-#include "glm/glm.hpp"
-#include "glm/gtc/quaternion.hpp"
+#include <glm/glm.hpp>
+#include <glm/gtc/quaternion.hpp>
 
 class Camera{
     private:
@@ -12,6 +12,10 @@ class Camera{
         glm::vec2 oldMousePosition;
     public:
         Camera();
+
+        glm::vec3 getEyeLoc();
+        void setEyeLoc(glm::vec3 setLoc);
+        void setViewOrient(glm::quat viewOrient);
 
         glm::mat4 getViewMat() const;
         glm::vec3 getViewLocation() const;

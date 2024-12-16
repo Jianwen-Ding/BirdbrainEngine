@@ -54,6 +54,12 @@
         "vector": "cpp",
         "algorithm": "cpp",
         "fstream": "cpp",
-        "iomanip": "cpp"
-    }
+        "iomanip": "cpp",
+        "__tree": "cpp",
+        "list": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "unordered_set": "cpp"
+    },
+    "cmake.sourceDirectory": "/Users/jianwending/Documents/ProjectsFolder/Current Projects/BirdBrainEngine/include/glm-master"
 }

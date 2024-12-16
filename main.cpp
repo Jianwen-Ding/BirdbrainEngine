@@ -10,13 +10,70 @@
 #include <glm/mat4x4.hpp>
 #include <glm/gtc/quaternion.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
+#include <filesystem>
+
+#include "Plane.hpp"
+#include "RenderManager.hpp"
+#include "ModelObject.hpp"
+#include "DirLightObject.hpp"
+#include "PointLightObject.hpp"
+#include "SpotLightObject.hpp"
+#include "LightObject.hpp"
+#include "Model.hpp"
+#include "Vertex.hpp"
+#include "Mesh.hpp"
+#include "Transform.hpp"
 #include "Camera.hpp"
 #include "stb_image.h"
+#include "Shader.hpp"
+#include "Texture.hpp"
+#include "TextureArray.hpp"
 
 #define GLCheck(x) GLClearErrors(); x; GLCheckErrorStatus(#x, __LINE__ );
 
+static void GLClearErrors(){
+    while(glGetError() != GL_NO_ERROR){
+    }
+}
+
+static bool GLCheckErrorStatus(const char* function, int line){
+    GLenum error;
+    while ((error = glGetError()) != GL_NO_ERROR) {
+        std::cout << "OpenGL error in " << function << " at line " << line << ": ";
+        switch (error) {
+            case GL_INVALID_ENUM:
+                std::cout << "GL_INVALID_ENUM\n";
+                break;
+            case GL_INVALID_VALUE:
+                std::cout << "GL_INVALID_VALUE\n";
+                break;
+            case GL_INVALID_OPERATION:
+                std::cout << "GL_INVALID_OPERATION\n";
+                break;
+            case GL_OUT_OF_MEMORY:
+                std::cout << "GL_OUT_OF_MEMORY\n";
+                break;
+            default:
+                std::cout << "Unknown error\n";
+                break;
+        }
+        return true;
+    }
+    return false;
+}
+
 // Current compile command
 //g++ main.cpp ./src/* -I./include/ -I./include/glm-master -std=c++11 -o a.out -lSDL2 -ldl
+
+// finds time
+unsigned long lastTime;
+float deltaTime;
+
+// finds speed
+const float speed = 5;
 
 // Globals
 const int WINDOW_WIDTH = 640;
@@ -26,46 +83,73 @@ SDL_Window* graphicsWindow = nullptr;
 SDL_GLContext openGLContext = nullptr;
 bool gQuit = false;
 
-// Textures
-GLuint Texture1 = 0;
-GLuint Texture2 = 0;
+// Storage
+std::unique_ptr<Plane> givenPlane;
 
-/// Vertice specifiers (VAOs, VBOs, IBOs)
-GLuint VBO = 0;
-GLuint IBO = 0;
-GLuint VAO = 0;
-GLuint lightVAO = 0;
-GLuint lightVBO = 0;
+Transform transformStore;
+Transform transformStore2;
+Transform transformStore3;
+Transform transformStore4;
+Transform transformStore5;
+Transform transformStore6;
+Transform transformStore7;
+Transform transformStore8;
+Transform transformStore9;
+Transform transformStore10;
+Transform transformStore11;
+Transform transformStore12;
+Transform transformStore13;
+RenderManager* renderManage;
+ModelObject* modelOb;
+ModelObject* modelOb2;
+DirLightObject* singleLight;
+PointLightObject* littleLight;
 
 // Shaders
-const std::string vertexShaderFileName = "./shaders/vertex.glsl";
-const std::string fragmentShaderFileName = "./shaders/frag.glsl";
-const std::string lightFragmentShaderFileName = "./shaders/lightFrag.glsl";
-GLuint GraphicsPipeline = 0;
-GLuint LightGraphicsPipeline = 0;
+const char* vertexShaderFileName = "../../shaders/vertex.glsl";
+const char* fragmentShaderFileName = "../../shaders/frag.glsl";
+const char* lightFragmentShaderFileName = "../../shaders/lightFrag.glsl";
+const char* skyboxVertexShaderFileName = "../../shaders/skyboxVertex.glsl";
+const char* skyboxFragmentShaderFileName = "../../shaders/skyboxFrag.glsl";
+
+// Model
+const char* base = "/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/OpenGL_jam/models/backpack/backpack.obj";
+const char* base2 = "/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/OpenGL_jam/models/mb/mb.obj";
+const char* backpackPath = "../../models/backpack/";
+const char* buildingPath = "../../models/mb/";
+const char* base3 = "/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/OpenGL_jam/models/2Fort/2fort.obj";
+const char* basePath = "../../models/2Fort/";
+const char* base4 = "/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/OpenGL_jam/models/NewPLaneObj/plane.obj";
+const char* planePath = "../../models/NewPLaneObj/";
+
+
+// Paths
+const char* skyBackPath = "../../textures/Box_Back.bmp";
+const char* skyBottomPath = "../../textures/Box_Bottom.bmp";
+const char* skyFrontPath = "../../textures/Box_Front.bmp";
+const char* skyLeftPath = "../../textures/Box_Left.bmp";
+const char* skyRightPath = "../../textures/Box_Right.bmp";
+const char* skyTopPath = "../../textures/Box_Top.bmp";
+
+Shader* SkyboxPipeline;
+Shader* GraphicsPipeline;
+Shader* LightGraphicsPipeline;
 
 // Transform variables
 GLfloat u_offSet = -5;
 GLfloat u_rotate = 0;
-GLfloat u_scale = 0.5;
+GLfloat u_scale = 2;
+GLfloat u_offSet2 = -5;
+GLfloat u_scale2 = 0.5;
+GLfloat u_lightRot = 0;
+GLfloat u_lightFoward = 0;
+GLfloat u_lightOrbit = 0;
 
 // Lighting variables
-GLfloat ambienceVal = 1.0f;
+GLfloat ambienceVal = 0.05f;
 glm::vec3 lightPos = glm::vec3(1.0f,1.0f,1.0f);
 
 Camera viewCam;
-static void GLClearErrors(){
-    while(glGetError() != GL_NO_ERROR){
-    }
-}
-
-static bool GLCheckErrorStatus(const char* function, int line){
-    while(GLenum error = glGetError()){
-        std::cout << "ERROR:" << error << "\nLINE:" << line << "\nFUNCTION:" << function <<std::endl;
-        return true;
-    }
-    return false;
-}
 
 std::string getFileString(const std::string& fileName){
     try{
@@ -94,6 +178,8 @@ void getOpenGLVersionInfo(){
 
 }
 void getInput(){
+    deltaTime = (float)(SDL_GetTicks() - lastTime) / (float)1000;
+    lastTime = SDL_GetTicks();
     SDL_Event e;
     while(SDL_PollEvent(&e) != 0){
         if(e.type == SDL_QUIT){
@@ -101,29 +187,67 @@ void getInput(){
             gQuit = true;
         }
         else if(e.type == SDL_MOUSEMOTION){
+            // givenPlane->veerMouse(deltaTime, e.motion.xrel,e.motion.yrel);
             viewCam.mouseLook(e.motion.xrel,e.motion.yrel);
         }
     }
-    u_rotate -= 0.0001f;
+    u_rotate -= 0.1f * deltaTime;
     const Uint8 *state = SDL_GetKeyboardState(NULL);
     if(state[SDL_SCANCODE_UP]||state[SDL_SCANCODE_W]){
-        viewCam.moveFoward(0.001f);
+        //givenPlane->veerDown(deltaTime);
+        viewCam.moveFoward(0.5f * deltaTime);
     }
     if(state[SDL_SCANCODE_DOWN]||state[SDL_SCANCODE_S]){
-        viewCam.moveBackwards(0.001f);
+        //givenPlane->veerUp(deltaTime);
+        viewCam.moveBackwards(0.5f * deltaTime);
+    }
+    if(state[SDL_SCANCODE_Q]){
+        //givenPlane->skewLeft(deltaTime);
+    }
+    if(state[SDL_SCANCODE_E]){
+        //givenPlane->skewRight(deltaTime);
     }
     if(state[SDL_SCANCODE_LEFT]||state[SDL_SCANCODE_A]){
-        viewCam.moveLeft(0.001f);
+        //givenPlane->veerLeft(deltaTime);
+        viewCam.moveLeft(1.0f * deltaTime);
     }
     if(state[SDL_SCANCODE_RIGHT]||state[SDL_SCANCODE_D]){
-        viewCam.moveRight(0.001f);
+        //givenPlane->veerRight(deltaTime);
+        viewCam.moveRight(1.0f * deltaTime);
+    }
+    if(state[SDL_SCANCODE_Z]){
+        u_offSet += deltaTime;
+    }
+    if(state[SDL_SCANCODE_Y]){
+        u_lightRot += 0.2 * deltaTime;
+    }
+    if(state[SDL_SCANCODE_T]){
+        u_lightOrbit += 0.01;
+        u_lightFoward += 0.01;
+    }
+    if(state[SDL_SCANCODE_U]){
+        u_lightOrbit -= 0.01;
+        u_lightFoward -= 0.01;
     }
     if(state[SDL_SCANCODE_LSHIFT]){
-        viewCam.moveDown(0.001f);
+        // givenPlane->fireLights();
+    }
+    if(state[SDL_SCANCODE_RSHIFT]){
+        // givenPlane->deactivateLights();
     }
     if(state[SDL_SCANCODE_SPACE]){
-        viewCam.moveUp(0.001f);
+        // givenPlane->accel(deltaTime);
     }
+     if(state[SDL_SCANCODE_LSHIFT]){
+        // givenPlane->deactivateLights();
+        viewCam.moveDown(1.0f * deltaTime);
+    }
+    if(state[SDL_SCANCODE_SPACE]){
+        // givenPlane->accel(deltaTime);
+        viewCam.moveUp(1.0f * deltaTime);
+    }
+
+    // givenPlane->update(deltaTime);
 }
 
 void insertUniform1f(GLfloat insert, const char* name, GLuint shaderProgram){
@@ -167,6 +291,26 @@ void insertUniformMatrix4fv(glm::mat4x4 insert, const char* name, GLuint shaderP
     }
 }
 void preDrawFunc(){
+
+    // Main shader implementation
+    renderManage->predraw();
+
+    glm::mat4 modelMatrix = glm::mat4x4(1.0f);
+    glm::quat testQuat = glm::normalize(glm::quat(1.0f,0.0f,0.0f,0.0f));
+    glm::quat test2Quat = glm::normalize(glm::quat(cos(u_rotate),0.0f,sin(u_rotate),0.0f));
+    glm::quat test3Quat = testQuat * test2Quat;
+    glm::mat4 rotationMatrix = glm::mat4_cast(test3Quat);
+    glm::mat4 lightModelMatrix = glm::translate(modelMatrix, glm::vec3(u_offSet/5,-u_offSet/5,u_offSet));
+    transformStore = Transform(glm::vec3(u_scale,u_scale,u_scale), glm::vec3(0.0f,10.0f,u_offSet), test3Quat);
+    transformStore2 = Transform(glm::vec3(u_scale2,u_scale2,u_scale2), glm::vec3(0.0f,0.0f,u_offSet2), test3Quat * glm::normalize(glm::quat(cos(u_rotate),0.0f,sin(u_rotate),0.0f)));
+    transformStore3 = Transform(glm::vec3(0.0f), glm::vec3(0.0f),  glm::normalize(glm::quat(cos(u_lightRot),0.0f,sin(u_lightRot),0.0f)));
+    transformStore4 = Transform(glm::vec3(0.25f),  viewCam.getEyeLoc() + viewCam.getViewLocation() * u_lightFoward, glm::normalize(glm::quat(1.0f,0.0f,0.0f,0.0f)));
+    transformStore5 = Transform(glm::vec3(0.25f),  glm::vec3(0.0f,0.0f,u_offSet) + glm::vec3(0.0f,0.0f,-1.0f) * glm::normalize(glm::quat(cos(u_lightOrbit) * (glm::sqrt(3)/glm::sqrt(4)),0.0f,sin(u_lightOrbit) * (glm::sqrt(3)/glm::sqrt(4)),-0.5f)), glm::normalize(glm::quat(1.0f,0.0f,0.0f,0.0f)));
+    transformStore7 = Transform(glm::vec3(0.25f),  viewCam.getEyeLoc(), glm::normalize(glm::quat(cos(u_lightOrbit),0.0f,sin(u_lightOrbit),0.0f)));
+    // Create transformation matrices
+    glm::mat4 viewMatrix = viewCam.getViewMat();
+    glm::mat4 perspectiveMatrix = glm::perspective(glm::radians(45.0f), (float)WINDOW_WIDTH/(float)WINDOW_HEIGHT, 0.1f, 10.0f);
+
     glDisable(GL_DEPTH_TEST);
     glDisable(GL_CULL_FACE);
     glViewport(0,0,WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -174,49 +318,15 @@ void preDrawFunc(){
     glClear(GL_DEPTH_BUFFER_BIT| GL_COLOR_BUFFER_BIT);
     glEnable(GL_DEPTH_TEST);
 
-    // Main shader implementation
-    glUseProgram(GraphicsPipeline);
-    // Create transformation matrices
-    glm::mat4 viewMatrix = viewCam.getViewMat();
-    glm::mat4 perspectiveMatrix = glm::perspective(glm::radians(45.0f), (float)WINDOW_WIDTH/(float)WINDOW_HEIGHT, 0.1f, 10.0f);
-    glm::mat4 modelMatrix = glm::mat4x4(1.0f);
-    glm::quat testQuat = glm::normalize(glm::quat(1.0f,0.0f,0.0f,0.0f));
-    glm::quat test2Quat = glm::normalize(glm::quat(cos(u_rotate),0.0f,sin(u_rotate),0.0f));
-    glm::quat test3Quat = testQuat * test2Quat;
-    glm::mat4 rotationMatrix = glm::mat4_cast(test3Quat);
-    glm::mat4 lightModelMatrix = glm::translate(modelMatrix, glm::vec3(u_offSet/5,-u_offSet/5,u_offSet));
-    modelMatrix = glm::translate(modelMatrix, glm::vec3(0.0f,0.0f,u_offSet));
-    modelMatrix = modelMatrix * rotationMatrix;
-    lightModelMatrix = lightModelMatrix * rotationMatrix;
-    modelMatrix = glm::scale(modelMatrix, glm::vec3(u_scale,u_scale,u_scale));
-    lightModelMatrix = glm::scale(lightModelMatrix, glm::vec3(u_scale/3,u_scale/3,u_scale/3));
-    // Inserting into uniform variables
-    insertUniformMatrix4fv(perspectiveMatrix, "u_perspectiveMat", GraphicsPipeline);
-    insertUniformMatrix4fv(modelMatrix, "u_modelMat", GraphicsPipeline);
-    insertUniformMatrix4fv(viewMatrix, "u_viewMat", GraphicsPipeline);
-    insertUniform3f(glm::vec3(1.0f), "u_lightColor", GraphicsPipeline);
-    insertUniform1i(0, "u_givenTexture1", GraphicsPipeline);
-    insertUniform1i(1, "u_givenTexture2", GraphicsPipeline);
-    insertUniform1f(ambienceVal, "u_ambienceStrength", GraphicsPipeline);
     // Light shader implementations
-    glUseProgram(LightGraphicsPipeline);
-    insertUniformMatrix4fv(perspectiveMatrix, "u_perspectiveMat", LightGraphicsPipeline);
-    insertUniformMatrix4fv(lightModelMatrix, "u_modelMat", LightGraphicsPipeline);
-    insertUniformMatrix4fv(viewMatrix, "u_viewMat", LightGraphicsPipeline);
+    LightGraphicsPipeline->use();
+    LightGraphicsPipeline->setMatrix("u_perspectiveMat", perspectiveMatrix);
+    LightGraphicsPipeline->setMatrix("u_modelMat", lightModelMatrix);
+    LightGraphicsPipeline->setMatrix("u_viewMat",viewMatrix);
 }
 
 void drawFunc(){
-    GLCheck(glActiveTexture(GL_TEXTURE0);)
-    GLCheck(glBindTexture(GL_TEXTURE_2D, Texture1);)
-    GLCheck(glActiveTexture(GL_TEXTURE1);)
-    GLCheck(glBindTexture(GL_TEXTURE_2D, Texture2);)
-    glUseProgram(GraphicsPipeline);
-    glBindVertexArray(VAO);
-    glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
-
-    glUseProgram(LightGraphicsPipeline);
-    glBindVertexArray(lightVAO);
-    glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+    renderManage->draw();
     
     glUseProgram(0);
 }
@@ -305,160 +415,38 @@ GLuint CreateShaderProgram(const std::string& vertexShaderSource, const std::str
     return programObject;
 }
 void CreateGraphicsPipeline(){
-    GraphicsPipeline = CreateShaderProgram(
-        getFileString(vertexShaderFileName), 
-        getFileString(fragmentShaderFileName));
-    LightGraphicsPipeline = CreateShaderProgram(
-        getFileString(vertexShaderFileName), 
-        getFileString(lightFragmentShaderFileName));
+    SkyboxPipeline = new Shader(skyboxVertexShaderFileName, skyboxFragmentShaderFileName);
+    GraphicsPipeline = new Shader(vertexShaderFileName, fragmentShaderFileName);
+    LightGraphicsPipeline = new Shader(vertexShaderFileName, lightFragmentShaderFileName);
 }
 
-void VertexSpecification(){
+void VertexSpecification(){ 
+    // Compiles into mesh
+    GLCheck(renderManage = new RenderManager(&viewCam, glm::perspective(glm::radians(45.0f), (float)WINDOW_WIDTH/(float)WINDOW_HEIGHT, 0.1f, 80.0f), GraphicsPipeline, WINDOW_WIDTH, WINDOW_HEIGHT);)
+    renderManage->setLightMap(skyFrontPath,skyRightPath,skyLeftPath,skyBackPath,skyBottomPath,skyTopPath, SkyboxPipeline);
+    GLCheck(renderManage->insertModel(base,backpackPath);)
+    GLCheck(renderManage->insertModel(base2,buildingPath);)
+    GLCheck(renderManage->insertModel(base3,basePath);)
+    GLCheck(renderManage->insertModel(base4,planePath);)
+    GLCheck(modelOb = new ModelObject(&transformStore, 0, renderManage);)
+    GLCheck(modelOb2 = new ModelObject(&transformStore2, 1, renderManage);)
+    GLCheck(modelOb2 = new ModelObject(&transformStore12, 1, renderManage);)
+    GLCheck(modelOb2 = new ModelObject(&transformStore9, 1, renderManage);)
+    GLCheck(modelOb2 = new ModelObject(&transformStore8, 3, renderManage);)
+    GLCheck(modelOb2 = new ModelObject(&transformStore6, 2, renderManage);)
+    GLCheck(modelOb2 = new ModelObject(&transformStore11, 2, renderManage);)
+    GLCheck(singleLight = new DirLightObject(&transformStore3, renderManage, glm::vec3(0.2f),glm::vec3(0.5f),glm::vec3(0.3f));)
+    new SpotLightObject(&transformStore3, renderManage, glm::vec3(0.2f),glm::vec3(0.5f),glm::vec3(0.3f), glm::cos(glm::radians(12.5f)), glm::cos(glm::radians(17.5f)), 1.0f, 0.05, 0.032);
+    new PointLightObject(&transformStore12, renderManage, glm::vec3(0.2f),glm::vec3(0.2f,0.8f,0.2f),glm::vec3(0.2f,0.8f,0.2f), 0.5f, 0.02, 0.032);
+    transformStore6 = Transform(glm::vec3(0.2f), glm::vec3(-1.0f), glm::quat(1.0f,0.0f,0.0f,0.0f));
+    transformStore8 = Transform(glm::vec3(0.1f), glm::vec3(0.0f, 0.5f, 0.0f), glm::normalize(glm::quat(1.0f,0.0f,-1.0f,0.0f)));
+    //givenPlane.reset(new Plane(&viewCam, renderManage, 3, 0.25, 0.5, 2.5, 6, 2.5, 0.5, glm::vec3(0.0f)));
+    transformStore9 = Transform(glm::vec3(0.5f), glm::vec3(0.0f, 0.5f, 0.0f), glm::normalize(glm::quat(1.0f,0.0f,0.0f,0.0f)));
+    transformStore9.setParent(&transformStore);
+    transformStore10 = Transform(glm::vec3(0.5f), glm::vec3(1.0f, 0.5f, 0.0f), glm::normalize(glm::quat(1.0f,0.0f,0.0f,0.0f)));
+    transformStore11 = Transform(glm::vec3(0.2f), glm::vec3(-1.0f, 20.0f, -1.0f), glm::quat( 0.0f,0.0f,0.0f,-1.0f));
+    transformStore12 = Transform(glm::vec3(5.75f), glm::vec3(5.0f, 10.0f, -1.0f), glm::quat( 0.5f,-0.5f,0.5f,-0.5f));
 
-    const std::vector<GLfloat> verticeData{
-        // Vertex 0
-        -0.5f, -0.5f, -0.5f, // Vector
-        1.0f, 0.0f, 0.0f,   // Color
-        0.0f,0.0f,         // Texture map
-        // Vertex 1
-        0.5f, -0.5f, -0.5f, // Vector
-        0.0f, 1.0f, 0.0f,  // Color
-        1.0f,0.0f,        // Texture map
-        // Vertex 2
-        -0.5f, 0.5f, -0.5f, // Vector
-        0.0f, 0.0f, 1.0f,  //Color
-        0.0f,1.0f,        // Texture map
-        // Vertex 3
-        0.5f, 0.5f, -0.5f, // Vector
-        0.0f, 0.0f, 1.0f, // Color
-        1.0f,1.0f,        // Texture map
-        // Vertex 4
-        -0.5f, -0.5f, 0.5f, // Vector
-        1.0f, 0.0f, 0.0f,  // Color
-        1.0f,0.0f,        // Texture map
-        // Vertex 5
-        0.5f, -0.5f, 0.5f, // Vector
-        0.0f, 1.0f, 0.0f, // Color
-        2.0f,0.0f,       // Texture map
-        // Vertex 6
-        -0.5f, 0.5f, 0.5f, // Vector
-        0.0f, 0.0f, 1.0f, //Color
-        1.0f,1.0f,       // Texture map
-        // Vertex 7
-        0.5f, 0.5f, 0.5f, // Vector
-        0.0f, 0.0f, 1.0f,// Color
-        2.0f,1.0f,      // Texture map
-    };
-
-    const std::vector<GLfloat> lightVerticeData{
-        // Vertex 0
-        -0.5f, -0.5f, -0.5f, // Vector
-        // Vertex 1
-        0.5f, -0.5f, -0.5f, // Vector
-        // Vertex 2
-        -0.5f, 0.5f, -0.5f, // Vector
-        // Vertex 3
-        0.5f, 0.5f, -0.5f, // Vector
-        // Vertex 4
-        -0.5f, -0.5f, 0.5f, // Vector
-        // Vertex 5
-        0.5f, -0.5f, 0.5f, // Vector
-        // Vertex 6
-        -0.5f, 0.5f, 0.5f, // Vector
-        // Vertex 7
-        0.5f, 0.5f, 0.5f, // Vector
-    };
-    const std::vector<GLuint> indexBufferData{2,0,1, 3,2,1, 5,4,6, 5,6,7, 4,0,2, 6,4,2, 5,1,3, 7,5,3, 6,2,3, 7,6,3, 4,0,1, 5,4,1};
-    // Generates VAO
-    // Sets up on the GPU
-    glGenVertexArrays(1, &VAO);
-    glBindVertexArray(VAO);
-
-    // Generates VBO
-    glGenBuffers(1, &VBO);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, verticeData.size() * sizeof(GLfloat), verticeData.data(), GL_STATIC_DRAW);
-
-    // Generates IBO
-    glGenBuffers(1, &IBO);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexBufferData.size()*sizeof(GLuint), indexBufferData.data(), GL_STATIC_DRAW);
-
-    // Generates Texture
-    // Texture 1
-    glGenTextures(1, &Texture1);
-    glBindTexture(GL_TEXTURE_2D, Texture1);
-    // Configures options
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    // Loads an generates texture
-    int tWidth;
-    int tHeight;
-    int tNRChannels;
-    stbi_set_flip_vertically_on_load(true);
-    unsigned char *tData = stbi_load("./textures/testTexture.jpeg", &tWidth, &tHeight, &tNRChannels, 0);
-    if(tData){
-
-        GLCheck(glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, tWidth, tHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, tData);)
-        glGenerateMipmap(GL_TEXTURE_2D);
-        stbi_image_free(tData);
-    }
-    else{
-        std::cout << "Error in texture1 loading" << std::endl;
-        exit(1);
-    }
-    // Texture 2
-    glGenTextures(1, &Texture2);
-    glBindTexture(GL_TEXTURE_2D, Texture2); 
-    // Configures options
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    // Loads an generates texture
-
-    tData = stbi_load("./textures/awesomeface.png", &tWidth, &tHeight, &tNRChannels, 0);
-    if(tData){
-        GLCheck(glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, tWidth, tHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, tData);)
-        glGenerateMipmap(GL_TEXTURE_2D);
-        stbi_image_free(tData);
-    }
-    else{
-        std::cout << "Error in texture2 loading" << std::endl;
-        exit(1);
-    }
-    
-    // Connects data
-    glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0,3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT)*8, (void*)0);
-    glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1,3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT)*8, (void*)(sizeof(GL_FLOAT)*3));
-    glEnableVertexAttribArray(2);
-    glVertexAttribPointer(2,3, GL_FLOAT, GL_FALSE, sizeof(GL_FLOAT)*8, (void*)(sizeof(GL_FLOAT)*6));
-    glBindVertexArray(0);
-    glDisableVertexAttribArray(0);
-    glDisableVertexAttribArray(1);
-    glDisableVertexAttribArray(2);
-
-    // Generates light VAO
-    // Generates VAO
-    glGenVertexArrays(1, &lightVAO);
-    glBindVertexArray(lightVAO);
-
-    // Generates VBO
-    glGenBuffers(1, &lightVBO);
-    glBindBuffer(GL_ARRAY_BUFFER, lightVBO);
-    glBufferData(GL_ARRAY_BUFFER, lightVerticeData.size() * sizeof(GLfloat), lightVerticeData.data(), GL_STATIC_DRAW);
-
-    //Binds IBO
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
-
-    glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0,3, GL_FLOAT, GL_FALSE, 0, (void*)0);
-    glBindVertexArray(0);
-    glDisableVertexAttribArray(0);
 }
 
 void MainLoop(){
@@ -472,22 +460,31 @@ void MainLoop(){
         SDL_GL_SwapWindow(graphicsWindow);
     }
 }
+
 void CleanUp(){
+    renderManage->Quit();
+    delete SkyboxPipeline;
+    delete GraphicsPipeline;
+
     //Destroy window
     SDL_DestroyWindow(graphicsWindow);
     //Quit SDL subsystems
     SDL_Quit();
 }
+
 // Test
 int main(){
     // Initializes SDL and OpenGL while opening window
     InitializeProgram();
 
+    // Creates shaders, both fragment and vector
+    CreateGraphicsPipeline();
+
     // Specifies VAO and VBO
     VertexSpecification();
 
-    // Creates shaders, both fragment and vector
-    CreateGraphicsPipeline();
+    lastTime = SDL_GetTicks();
+    deltaTime = 0;
 
     // Continually draws over file
     MainLoop();
