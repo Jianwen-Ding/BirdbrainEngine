@@ -1,17 +1,30 @@
-#ifndef TRANSFORM
-#define TRANSFORM
+#ifndef TRANSFORM_HPP
+#define TRANSFORM_HPP
 
-// C++
+#include <glm/glm.hpp>
+#include <glm/gtc/quaternion.hpp>
 #include <glad/glad.h>
 
-// Math Libary
-#include "glm/glm.hpp"
-#include "glm/gtc/quaternion.hpp"
-#include "Component.hpp"
-// >>>>>>FUNCTION OF CLASS<<<<<<
-// It is a 
-class Transform : Component{
-    private:
+class Transform{
+    public:
+        glm::vec3 scale;
+        glm::vec3 getWorldScale();
+        
+        glm::vec3 position;
+        glm::vec3 getWorldPosition();
+
+        glm::quat rotation;
+        glm::quat getWorldRotation();
+
+        Transform* parent;
+
+        glm::mat4 getTransformMat();
+        Transform();
+        Transform(glm::vec3 setScale, glm::vec3 setPosition, glm::quat getRotation);
+
+        glm::vec3 getFoward();
+        void setParent(Transform* setParent);   
 
 };
+
 #endif

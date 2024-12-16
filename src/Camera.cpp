@@ -1,10 +1,14 @@
 #include "Camera.hpp"
-#include "glm/gtc/matrix_transform.hpp"
+#include <glm/gtc/matrix_transform.hpp>
 
 Camera::Camera(){
     eye = glm::vec3(0.0f,0.0f,0.0f);
     viewOrientation = glm::quat(1.0f,0.0f,0.0f,0.0f);
     upVector = glm::vec3(0.0f,1.0f,0.0f);
+}
+
+glm::vec3 Camera::getEyeLoc(){
+    return eye;
 }
 
 void Camera::mouseLook(float mouseX, float mouseY){
@@ -45,4 +49,12 @@ void Camera::moveUp(float speed){
 }
 void Camera::moveDown(float speed){
     eye.y -= speed;
+}
+
+void Camera::setEyeLoc(glm::vec3 setEye){
+    eye = setEye;
+}
+
+void Camera::setViewOrient(glm::quat viewOrient){
+    viewOrientation = viewOrient;
 }
