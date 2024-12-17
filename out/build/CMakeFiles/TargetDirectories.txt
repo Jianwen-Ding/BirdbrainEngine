@@ -1,3 +1,0 @@
-/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles/BirdBrainEngine.dir
-/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles/edit_cache.dir
-/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles/rebuild_cache.dir
