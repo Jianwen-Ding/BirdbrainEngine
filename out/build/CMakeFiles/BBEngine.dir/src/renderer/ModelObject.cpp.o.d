@@ -1,6 +1,5 @@
-CMakeFiles/BBEngine.dir/src/RenderManager.cpp.o: \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/RenderManager.cpp \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/RenderManager.hpp \
+CMakeFiles/BBEngine.dir/src/renderer/ModelObject.cpp.o: \
+  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/ModelObject.cpp \
   /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/renderer/ModelObject.hpp \
   /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/renderer/Transform.hpp \
   /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/glm-master/glm/glm.hpp \
@@ -969,6 +968,7 @@ CMakeFiles/BBEngine.dir/src/RenderManager.cpp.o: \
   /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/glm-master/glm/gtc/../common.hpp \
   /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/glad/glad.h \
   /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/KHR/khrplatform.h \
+  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/RenderManager.hpp \
   /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/renderer/LightObject.hpp \
   /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/renderer/Shader.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/string \
@@ -1087,7 +1087,4 @@ CMakeFiles/BBEngine.dir/src/RenderManager.cpp.o: \
   /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/postprocess.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/map \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__tree \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/renderer/DirLightObject.hpp \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/renderer/SpotLightObject.hpp \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/renderer/PointLightObject.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/iostream

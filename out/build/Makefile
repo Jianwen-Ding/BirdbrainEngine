@@ -153,198 +153,6 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-src/Camera.o: src/Camera.cpp.o
-.PHONY : src/Camera.o
-
-# target to build an object file
-src/Camera.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/Camera.cpp.o
-.PHONY : src/Camera.cpp.o
-
-src/Camera.i: src/Camera.cpp.i
-.PHONY : src/Camera.i
-
-# target to preprocess a source file
-src/Camera.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/Camera.cpp.i
-.PHONY : src/Camera.cpp.i
-
-src/Camera.s: src/Camera.cpp.s
-.PHONY : src/Camera.s
-
-# target to generate assembly for a file
-src/Camera.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/Camera.cpp.s
-.PHONY : src/Camera.cpp.s
-
-src/DirLightObject.o: src/DirLightObject.cpp.o
-.PHONY : src/DirLightObject.o
-
-# target to build an object file
-src/DirLightObject.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/DirLightObject.cpp.o
-.PHONY : src/DirLightObject.cpp.o
-
-src/DirLightObject.i: src/DirLightObject.cpp.i
-.PHONY : src/DirLightObject.i
-
-# target to preprocess a source file
-src/DirLightObject.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/DirLightObject.cpp.i
-.PHONY : src/DirLightObject.cpp.i
-
-src/DirLightObject.s: src/DirLightObject.cpp.s
-.PHONY : src/DirLightObject.s
-
-# target to generate assembly for a file
-src/DirLightObject.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/DirLightObject.cpp.s
-.PHONY : src/DirLightObject.cpp.s
-
-src/LightObject.o: src/LightObject.cpp.o
-.PHONY : src/LightObject.o
-
-# target to build an object file
-src/LightObject.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/LightObject.cpp.o
-.PHONY : src/LightObject.cpp.o
-
-src/LightObject.i: src/LightObject.cpp.i
-.PHONY : src/LightObject.i
-
-# target to preprocess a source file
-src/LightObject.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/LightObject.cpp.i
-.PHONY : src/LightObject.cpp.i
-
-src/LightObject.s: src/LightObject.cpp.s
-.PHONY : src/LightObject.s
-
-# target to generate assembly for a file
-src/LightObject.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/LightObject.cpp.s
-.PHONY : src/LightObject.cpp.s
-
-src/Mesh.o: src/Mesh.cpp.o
-.PHONY : src/Mesh.o
-
-# target to build an object file
-src/Mesh.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/Mesh.cpp.o
-.PHONY : src/Mesh.cpp.o
-
-src/Mesh.i: src/Mesh.cpp.i
-.PHONY : src/Mesh.i
-
-# target to preprocess a source file
-src/Mesh.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/Mesh.cpp.i
-.PHONY : src/Mesh.cpp.i
-
-src/Mesh.s: src/Mesh.cpp.s
-.PHONY : src/Mesh.s
-
-# target to generate assembly for a file
-src/Mesh.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/Mesh.cpp.s
-.PHONY : src/Mesh.cpp.s
-
-src/Model.o: src/Model.cpp.o
-.PHONY : src/Model.o
-
-# target to build an object file
-src/Model.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/Model.cpp.o
-.PHONY : src/Model.cpp.o
-
-src/Model.i: src/Model.cpp.i
-.PHONY : src/Model.i
-
-# target to preprocess a source file
-src/Model.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/Model.cpp.i
-.PHONY : src/Model.cpp.i
-
-src/Model.s: src/Model.cpp.s
-.PHONY : src/Model.s
-
-# target to generate assembly for a file
-src/Model.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/Model.cpp.s
-.PHONY : src/Model.cpp.s
-
-src/ModelObject.o: src/ModelObject.cpp.o
-.PHONY : src/ModelObject.o
-
-# target to build an object file
-src/ModelObject.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/ModelObject.cpp.o
-.PHONY : src/ModelObject.cpp.o
-
-src/ModelObject.i: src/ModelObject.cpp.i
-.PHONY : src/ModelObject.i
-
-# target to preprocess a source file
-src/ModelObject.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/ModelObject.cpp.i
-.PHONY : src/ModelObject.cpp.i
-
-src/ModelObject.s: src/ModelObject.cpp.s
-.PHONY : src/ModelObject.s
-
-# target to generate assembly for a file
-src/ModelObject.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/ModelObject.cpp.s
-.PHONY : src/ModelObject.cpp.s
-
-src/Plane.o: src/Plane.cpp.o
-.PHONY : src/Plane.o
-
-# target to build an object file
-src/Plane.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/Plane.cpp.o
-.PHONY : src/Plane.cpp.o
-
-src/Plane.i: src/Plane.cpp.i
-.PHONY : src/Plane.i
-
-# target to preprocess a source file
-src/Plane.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/Plane.cpp.i
-.PHONY : src/Plane.cpp.i
-
-src/Plane.s: src/Plane.cpp.s
-.PHONY : src/Plane.s
-
-# target to generate assembly for a file
-src/Plane.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/Plane.cpp.s
-.PHONY : src/Plane.cpp.s
-
-src/PointLightObject.o: src/PointLightObject.cpp.o
-.PHONY : src/PointLightObject.o
-
-# target to build an object file
-src/PointLightObject.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/PointLightObject.cpp.o
-.PHONY : src/PointLightObject.cpp.o
-
-src/PointLightObject.i: src/PointLightObject.cpp.i
-.PHONY : src/PointLightObject.i
-
-# target to preprocess a source file
-src/PointLightObject.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/PointLightObject.cpp.i
-.PHONY : src/PointLightObject.cpp.i
-
-src/PointLightObject.s: src/PointLightObject.cpp.s
-.PHONY : src/PointLightObject.s
-
-# target to generate assembly for a file
-src/PointLightObject.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/PointLightObject.cpp.s
-.PHONY : src/PointLightObject.cpp.s
-
 src/RenderManager.o: src/RenderManager.cpp.o
 .PHONY : src/RenderManager.o
 
@@ -369,197 +177,389 @@ src/RenderManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/RenderManager.cpp.s
 .PHONY : src/RenderManager.cpp.s
 
-src/Shader.o: src/Shader.cpp.o
-.PHONY : src/Shader.o
+src/renderer/Camera.o: src/renderer/Camera.cpp.o
+.PHONY : src/renderer/Camera.o
 
 # target to build an object file
-src/Shader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/Shader.cpp.o
-.PHONY : src/Shader.cpp.o
+src/renderer/Camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/Camera.cpp.o
+.PHONY : src/renderer/Camera.cpp.o
 
-src/Shader.i: src/Shader.cpp.i
-.PHONY : src/Shader.i
+src/renderer/Camera.i: src/renderer/Camera.cpp.i
+.PHONY : src/renderer/Camera.i
 
 # target to preprocess a source file
-src/Shader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/Shader.cpp.i
-.PHONY : src/Shader.cpp.i
+src/renderer/Camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/Camera.cpp.i
+.PHONY : src/renderer/Camera.cpp.i
 
-src/Shader.s: src/Shader.cpp.s
-.PHONY : src/Shader.s
+src/renderer/Camera.s: src/renderer/Camera.cpp.s
+.PHONY : src/renderer/Camera.s
 
 # target to generate assembly for a file
-src/Shader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/Shader.cpp.s
-.PHONY : src/Shader.cpp.s
+src/renderer/Camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/Camera.cpp.s
+.PHONY : src/renderer/Camera.cpp.s
 
-src/SpotLightObject.o: src/SpotLightObject.cpp.o
-.PHONY : src/SpotLightObject.o
+src/renderer/DirLightObject.o: src/renderer/DirLightObject.cpp.o
+.PHONY : src/renderer/DirLightObject.o
 
 # target to build an object file
-src/SpotLightObject.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/SpotLightObject.cpp.o
-.PHONY : src/SpotLightObject.cpp.o
+src/renderer/DirLightObject.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/DirLightObject.cpp.o
+.PHONY : src/renderer/DirLightObject.cpp.o
 
-src/SpotLightObject.i: src/SpotLightObject.cpp.i
-.PHONY : src/SpotLightObject.i
+src/renderer/DirLightObject.i: src/renderer/DirLightObject.cpp.i
+.PHONY : src/renderer/DirLightObject.i
 
 # target to preprocess a source file
-src/SpotLightObject.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/SpotLightObject.cpp.i
-.PHONY : src/SpotLightObject.cpp.i
+src/renderer/DirLightObject.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/DirLightObject.cpp.i
+.PHONY : src/renderer/DirLightObject.cpp.i
 
-src/SpotLightObject.s: src/SpotLightObject.cpp.s
-.PHONY : src/SpotLightObject.s
+src/renderer/DirLightObject.s: src/renderer/DirLightObject.cpp.s
+.PHONY : src/renderer/DirLightObject.s
 
 # target to generate assembly for a file
-src/SpotLightObject.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/SpotLightObject.cpp.s
-.PHONY : src/SpotLightObject.cpp.s
+src/renderer/DirLightObject.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/DirLightObject.cpp.s
+.PHONY : src/renderer/DirLightObject.cpp.s
 
-src/Texture.o: src/Texture.cpp.o
-.PHONY : src/Texture.o
+src/renderer/LightObject.o: src/renderer/LightObject.cpp.o
+.PHONY : src/renderer/LightObject.o
 
 # target to build an object file
-src/Texture.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/Texture.cpp.o
-.PHONY : src/Texture.cpp.o
+src/renderer/LightObject.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/LightObject.cpp.o
+.PHONY : src/renderer/LightObject.cpp.o
 
-src/Texture.i: src/Texture.cpp.i
-.PHONY : src/Texture.i
+src/renderer/LightObject.i: src/renderer/LightObject.cpp.i
+.PHONY : src/renderer/LightObject.i
 
 # target to preprocess a source file
-src/Texture.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/Texture.cpp.i
-.PHONY : src/Texture.cpp.i
+src/renderer/LightObject.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/LightObject.cpp.i
+.PHONY : src/renderer/LightObject.cpp.i
 
-src/Texture.s: src/Texture.cpp.s
-.PHONY : src/Texture.s
+src/renderer/LightObject.s: src/renderer/LightObject.cpp.s
+.PHONY : src/renderer/LightObject.s
 
 # target to generate assembly for a file
-src/Texture.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/Texture.cpp.s
-.PHONY : src/Texture.cpp.s
+src/renderer/LightObject.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/LightObject.cpp.s
+.PHONY : src/renderer/LightObject.cpp.s
 
-src/TextureArray.o: src/TextureArray.cpp.o
-.PHONY : src/TextureArray.o
+src/renderer/Mesh.o: src/renderer/Mesh.cpp.o
+.PHONY : src/renderer/Mesh.o
 
 # target to build an object file
-src/TextureArray.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/TextureArray.cpp.o
-.PHONY : src/TextureArray.cpp.o
+src/renderer/Mesh.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/Mesh.cpp.o
+.PHONY : src/renderer/Mesh.cpp.o
 
-src/TextureArray.i: src/TextureArray.cpp.i
-.PHONY : src/TextureArray.i
+src/renderer/Mesh.i: src/renderer/Mesh.cpp.i
+.PHONY : src/renderer/Mesh.i
 
 # target to preprocess a source file
-src/TextureArray.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/TextureArray.cpp.i
-.PHONY : src/TextureArray.cpp.i
+src/renderer/Mesh.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/Mesh.cpp.i
+.PHONY : src/renderer/Mesh.cpp.i
 
-src/TextureArray.s: src/TextureArray.cpp.s
-.PHONY : src/TextureArray.s
+src/renderer/Mesh.s: src/renderer/Mesh.cpp.s
+.PHONY : src/renderer/Mesh.s
 
 # target to generate assembly for a file
-src/TextureArray.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/TextureArray.cpp.s
-.PHONY : src/TextureArray.cpp.s
+src/renderer/Mesh.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/Mesh.cpp.s
+.PHONY : src/renderer/Mesh.cpp.s
 
-src/Transform.o: src/Transform.cpp.o
-.PHONY : src/Transform.o
+src/renderer/Model.o: src/renderer/Model.cpp.o
+.PHONY : src/renderer/Model.o
 
 # target to build an object file
-src/Transform.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/Transform.cpp.o
-.PHONY : src/Transform.cpp.o
+src/renderer/Model.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/Model.cpp.o
+.PHONY : src/renderer/Model.cpp.o
 
-src/Transform.i: src/Transform.cpp.i
-.PHONY : src/Transform.i
+src/renderer/Model.i: src/renderer/Model.cpp.i
+.PHONY : src/renderer/Model.i
 
 # target to preprocess a source file
-src/Transform.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/Transform.cpp.i
-.PHONY : src/Transform.cpp.i
+src/renderer/Model.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/Model.cpp.i
+.PHONY : src/renderer/Model.cpp.i
 
-src/Transform.s: src/Transform.cpp.s
-.PHONY : src/Transform.s
+src/renderer/Model.s: src/renderer/Model.cpp.s
+.PHONY : src/renderer/Model.s
 
 # target to generate assembly for a file
-src/Transform.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/Transform.cpp.s
-.PHONY : src/Transform.cpp.s
+src/renderer/Model.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/Model.cpp.s
+.PHONY : src/renderer/Model.cpp.s
 
-src/glad.o: src/glad.c.o
-.PHONY : src/glad.o
+src/renderer/ModelObject.o: src/renderer/ModelObject.cpp.o
+.PHONY : src/renderer/ModelObject.o
 
 # target to build an object file
-src/glad.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/glad.c.o
-.PHONY : src/glad.c.o
+src/renderer/ModelObject.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/ModelObject.cpp.o
+.PHONY : src/renderer/ModelObject.cpp.o
 
-src/glad.i: src/glad.c.i
-.PHONY : src/glad.i
+src/renderer/ModelObject.i: src/renderer/ModelObject.cpp.i
+.PHONY : src/renderer/ModelObject.i
 
 # target to preprocess a source file
-src/glad.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/glad.c.i
-.PHONY : src/glad.c.i
+src/renderer/ModelObject.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/ModelObject.cpp.i
+.PHONY : src/renderer/ModelObject.cpp.i
 
-src/glad.s: src/glad.c.s
-.PHONY : src/glad.s
+src/renderer/ModelObject.s: src/renderer/ModelObject.cpp.s
+.PHONY : src/renderer/ModelObject.s
 
 # target to generate assembly for a file
-src/glad.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/glad.c.s
-.PHONY : src/glad.c.s
+src/renderer/ModelObject.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/ModelObject.cpp.s
+.PHONY : src/renderer/ModelObject.cpp.s
 
-src/stb_imag.o: src/stb_imag.cpp.o
-.PHONY : src/stb_imag.o
+src/renderer/Plane.o: src/renderer/Plane.cpp.o
+.PHONY : src/renderer/Plane.o
 
 # target to build an object file
-src/stb_imag.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/stb_imag.cpp.o
-.PHONY : src/stb_imag.cpp.o
+src/renderer/Plane.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/Plane.cpp.o
+.PHONY : src/renderer/Plane.cpp.o
 
-src/stb_imag.i: src/stb_imag.cpp.i
-.PHONY : src/stb_imag.i
+src/renderer/Plane.i: src/renderer/Plane.cpp.i
+.PHONY : src/renderer/Plane.i
 
 # target to preprocess a source file
-src/stb_imag.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/stb_imag.cpp.i
-.PHONY : src/stb_imag.cpp.i
+src/renderer/Plane.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/Plane.cpp.i
+.PHONY : src/renderer/Plane.cpp.i
 
-src/stb_imag.s: src/stb_imag.cpp.s
-.PHONY : src/stb_imag.s
+src/renderer/Plane.s: src/renderer/Plane.cpp.s
+.PHONY : src/renderer/Plane.s
 
 # target to generate assembly for a file
-src/stb_imag.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/stb_imag.cpp.s
-.PHONY : src/stb_imag.cpp.s
+src/renderer/Plane.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/Plane.cpp.s
+.PHONY : src/renderer/Plane.cpp.s
 
-src/structs/Vertex.o: src/structs/Vertex.cpp.o
-.PHONY : src/structs/Vertex.o
+src/renderer/PointLightObject.o: src/renderer/PointLightObject.cpp.o
+.PHONY : src/renderer/PointLightObject.o
 
 # target to build an object file
-src/structs/Vertex.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/structs/Vertex.cpp.o
-.PHONY : src/structs/Vertex.cpp.o
+src/renderer/PointLightObject.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/PointLightObject.cpp.o
+.PHONY : src/renderer/PointLightObject.cpp.o
 
-src/structs/Vertex.i: src/structs/Vertex.cpp.i
-.PHONY : src/structs/Vertex.i
+src/renderer/PointLightObject.i: src/renderer/PointLightObject.cpp.i
+.PHONY : src/renderer/PointLightObject.i
 
 # target to preprocess a source file
-src/structs/Vertex.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/structs/Vertex.cpp.i
-.PHONY : src/structs/Vertex.cpp.i
+src/renderer/PointLightObject.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/PointLightObject.cpp.i
+.PHONY : src/renderer/PointLightObject.cpp.i
 
-src/structs/Vertex.s: src/structs/Vertex.cpp.s
-.PHONY : src/structs/Vertex.s
+src/renderer/PointLightObject.s: src/renderer/PointLightObject.cpp.s
+.PHONY : src/renderer/PointLightObject.s
 
 # target to generate assembly for a file
-src/structs/Vertex.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/structs/Vertex.cpp.s
-.PHONY : src/structs/Vertex.cpp.s
+src/renderer/PointLightObject.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/PointLightObject.cpp.s
+.PHONY : src/renderer/PointLightObject.cpp.s
+
+src/renderer/Shader.o: src/renderer/Shader.cpp.o
+.PHONY : src/renderer/Shader.o
+
+# target to build an object file
+src/renderer/Shader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/Shader.cpp.o
+.PHONY : src/renderer/Shader.cpp.o
+
+src/renderer/Shader.i: src/renderer/Shader.cpp.i
+.PHONY : src/renderer/Shader.i
+
+# target to preprocess a source file
+src/renderer/Shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/Shader.cpp.i
+.PHONY : src/renderer/Shader.cpp.i
+
+src/renderer/Shader.s: src/renderer/Shader.cpp.s
+.PHONY : src/renderer/Shader.s
+
+# target to generate assembly for a file
+src/renderer/Shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/Shader.cpp.s
+.PHONY : src/renderer/Shader.cpp.s
+
+src/renderer/SpotLightObject.o: src/renderer/SpotLightObject.cpp.o
+.PHONY : src/renderer/SpotLightObject.o
+
+# target to build an object file
+src/renderer/SpotLightObject.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/SpotLightObject.cpp.o
+.PHONY : src/renderer/SpotLightObject.cpp.o
+
+src/renderer/SpotLightObject.i: src/renderer/SpotLightObject.cpp.i
+.PHONY : src/renderer/SpotLightObject.i
+
+# target to preprocess a source file
+src/renderer/SpotLightObject.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/SpotLightObject.cpp.i
+.PHONY : src/renderer/SpotLightObject.cpp.i
+
+src/renderer/SpotLightObject.s: src/renderer/SpotLightObject.cpp.s
+.PHONY : src/renderer/SpotLightObject.s
+
+# target to generate assembly for a file
+src/renderer/SpotLightObject.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/SpotLightObject.cpp.s
+.PHONY : src/renderer/SpotLightObject.cpp.s
+
+src/renderer/Texture.o: src/renderer/Texture.cpp.o
+.PHONY : src/renderer/Texture.o
+
+# target to build an object file
+src/renderer/Texture.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/Texture.cpp.o
+.PHONY : src/renderer/Texture.cpp.o
+
+src/renderer/Texture.i: src/renderer/Texture.cpp.i
+.PHONY : src/renderer/Texture.i
+
+# target to preprocess a source file
+src/renderer/Texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/Texture.cpp.i
+.PHONY : src/renderer/Texture.cpp.i
+
+src/renderer/Texture.s: src/renderer/Texture.cpp.s
+.PHONY : src/renderer/Texture.s
+
+# target to generate assembly for a file
+src/renderer/Texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/Texture.cpp.s
+.PHONY : src/renderer/Texture.cpp.s
+
+src/renderer/TextureArray.o: src/renderer/TextureArray.cpp.o
+.PHONY : src/renderer/TextureArray.o
+
+# target to build an object file
+src/renderer/TextureArray.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/TextureArray.cpp.o
+.PHONY : src/renderer/TextureArray.cpp.o
+
+src/renderer/TextureArray.i: src/renderer/TextureArray.cpp.i
+.PHONY : src/renderer/TextureArray.i
+
+# target to preprocess a source file
+src/renderer/TextureArray.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/TextureArray.cpp.i
+.PHONY : src/renderer/TextureArray.cpp.i
+
+src/renderer/TextureArray.s: src/renderer/TextureArray.cpp.s
+.PHONY : src/renderer/TextureArray.s
+
+# target to generate assembly for a file
+src/renderer/TextureArray.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/TextureArray.cpp.s
+.PHONY : src/renderer/TextureArray.cpp.s
+
+src/renderer/Transform.o: src/renderer/Transform.cpp.o
+.PHONY : src/renderer/Transform.o
+
+# target to build an object file
+src/renderer/Transform.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/Transform.cpp.o
+.PHONY : src/renderer/Transform.cpp.o
+
+src/renderer/Transform.i: src/renderer/Transform.cpp.i
+.PHONY : src/renderer/Transform.i
+
+# target to preprocess a source file
+src/renderer/Transform.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/Transform.cpp.i
+.PHONY : src/renderer/Transform.cpp.i
+
+src/renderer/Transform.s: src/renderer/Transform.cpp.s
+.PHONY : src/renderer/Transform.s
+
+# target to generate assembly for a file
+src/renderer/Transform.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/Transform.cpp.s
+.PHONY : src/renderer/Transform.cpp.s
+
+src/renderer/Vertex.o: src/renderer/Vertex.cpp.o
+.PHONY : src/renderer/Vertex.o
+
+# target to build an object file
+src/renderer/Vertex.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/Vertex.cpp.o
+.PHONY : src/renderer/Vertex.cpp.o
+
+src/renderer/Vertex.i: src/renderer/Vertex.cpp.i
+.PHONY : src/renderer/Vertex.i
+
+# target to preprocess a source file
+src/renderer/Vertex.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/Vertex.cpp.i
+.PHONY : src/renderer/Vertex.cpp.i
+
+src/renderer/Vertex.s: src/renderer/Vertex.cpp.s
+.PHONY : src/renderer/Vertex.s
+
+# target to generate assembly for a file
+src/renderer/Vertex.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/Vertex.cpp.s
+.PHONY : src/renderer/Vertex.cpp.s
+
+src/renderer/glad.o: src/renderer/glad.c.o
+.PHONY : src/renderer/glad.o
+
+# target to build an object file
+src/renderer/glad.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/glad.c.o
+.PHONY : src/renderer/glad.c.o
+
+src/renderer/glad.i: src/renderer/glad.c.i
+.PHONY : src/renderer/glad.i
+
+# target to preprocess a source file
+src/renderer/glad.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/glad.c.i
+.PHONY : src/renderer/glad.c.i
+
+src/renderer/glad.s: src/renderer/glad.c.s
+.PHONY : src/renderer/glad.s
+
+# target to generate assembly for a file
+src/renderer/glad.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/glad.c.s
+.PHONY : src/renderer/glad.c.s
+
+src/renderer/stb_imag.o: src/renderer/stb_imag.cpp.o
+.PHONY : src/renderer/stb_imag.o
+
+# target to build an object file
+src/renderer/stb_imag.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/stb_imag.cpp.o
+.PHONY : src/renderer/stb_imag.cpp.o
+
+src/renderer/stb_imag.i: src/renderer/stb_imag.cpp.i
+.PHONY : src/renderer/stb_imag.i
+
+# target to preprocess a source file
+src/renderer/stb_imag.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/stb_imag.cpp.i
+.PHONY : src/renderer/stb_imag.cpp.i
+
+src/renderer/stb_imag.s: src/renderer/stb_imag.cpp.s
+.PHONY : src/renderer/stb_imag.s
+
+# target to generate assembly for a file
+src/renderer/stb_imag.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/BBEngine.dir/build.make CMakeFiles/BBEngine.dir/src/renderer/stb_imag.cpp.s
+.PHONY : src/renderer/stb_imag.cpp.s
 
 # Help Target
 help:
@@ -573,57 +573,57 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... src/Camera.o"
-	@echo "... src/Camera.i"
-	@echo "... src/Camera.s"
-	@echo "... src/DirLightObject.o"
-	@echo "... src/DirLightObject.i"
-	@echo "... src/DirLightObject.s"
-	@echo "... src/LightObject.o"
-	@echo "... src/LightObject.i"
-	@echo "... src/LightObject.s"
-	@echo "... src/Mesh.o"
-	@echo "... src/Mesh.i"
-	@echo "... src/Mesh.s"
-	@echo "... src/Model.o"
-	@echo "... src/Model.i"
-	@echo "... src/Model.s"
-	@echo "... src/ModelObject.o"
-	@echo "... src/ModelObject.i"
-	@echo "... src/ModelObject.s"
-	@echo "... src/Plane.o"
-	@echo "... src/Plane.i"
-	@echo "... src/Plane.s"
-	@echo "... src/PointLightObject.o"
-	@echo "... src/PointLightObject.i"
-	@echo "... src/PointLightObject.s"
 	@echo "... src/RenderManager.o"
 	@echo "... src/RenderManager.i"
 	@echo "... src/RenderManager.s"
-	@echo "... src/Shader.o"
-	@echo "... src/Shader.i"
-	@echo "... src/Shader.s"
-	@echo "... src/SpotLightObject.o"
-	@echo "... src/SpotLightObject.i"
-	@echo "... src/SpotLightObject.s"
-	@echo "... src/Texture.o"
-	@echo "... src/Texture.i"
-	@echo "... src/Texture.s"
-	@echo "... src/TextureArray.o"
-	@echo "... src/TextureArray.i"
-	@echo "... src/TextureArray.s"
-	@echo "... src/Transform.o"
-	@echo "... src/Transform.i"
-	@echo "... src/Transform.s"
-	@echo "... src/glad.o"
-	@echo "... src/glad.i"
-	@echo "... src/glad.s"
-	@echo "... src/stb_imag.o"
-	@echo "... src/stb_imag.i"
-	@echo "... src/stb_imag.s"
-	@echo "... src/structs/Vertex.o"
-	@echo "... src/structs/Vertex.i"
-	@echo "... src/structs/Vertex.s"
+	@echo "... src/renderer/Camera.o"
+	@echo "... src/renderer/Camera.i"
+	@echo "... src/renderer/Camera.s"
+	@echo "... src/renderer/DirLightObject.o"
+	@echo "... src/renderer/DirLightObject.i"
+	@echo "... src/renderer/DirLightObject.s"
+	@echo "... src/renderer/LightObject.o"
+	@echo "... src/renderer/LightObject.i"
+	@echo "... src/renderer/LightObject.s"
+	@echo "... src/renderer/Mesh.o"
+	@echo "... src/renderer/Mesh.i"
+	@echo "... src/renderer/Mesh.s"
+	@echo "... src/renderer/Model.o"
+	@echo "... src/renderer/Model.i"
+	@echo "... src/renderer/Model.s"
+	@echo "... src/renderer/ModelObject.o"
+	@echo "... src/renderer/ModelObject.i"
+	@echo "... src/renderer/ModelObject.s"
+	@echo "... src/renderer/Plane.o"
+	@echo "... src/renderer/Plane.i"
+	@echo "... src/renderer/Plane.s"
+	@echo "... src/renderer/PointLightObject.o"
+	@echo "... src/renderer/PointLightObject.i"
+	@echo "... src/renderer/PointLightObject.s"
+	@echo "... src/renderer/Shader.o"
+	@echo "... src/renderer/Shader.i"
+	@echo "... src/renderer/Shader.s"
+	@echo "... src/renderer/SpotLightObject.o"
+	@echo "... src/renderer/SpotLightObject.i"
+	@echo "... src/renderer/SpotLightObject.s"
+	@echo "... src/renderer/Texture.o"
+	@echo "... src/renderer/Texture.i"
+	@echo "... src/renderer/Texture.s"
+	@echo "... src/renderer/TextureArray.o"
+	@echo "... src/renderer/TextureArray.i"
+	@echo "... src/renderer/TextureArray.s"
+	@echo "... src/renderer/Transform.o"
+	@echo "... src/renderer/Transform.i"
+	@echo "... src/renderer/Transform.s"
+	@echo "... src/renderer/Vertex.o"
+	@echo "... src/renderer/Vertex.i"
+	@echo "... src/renderer/Vertex.s"
+	@echo "... src/renderer/glad.o"
+	@echo "... src/renderer/glad.i"
+	@echo "... src/renderer/glad.s"
+	@echo "... src/renderer/stb_imag.o"
+	@echo "... src/renderer/stb_imag.i"
+	@echo "... src/renderer/stb_imag.s"
 .PHONY : help
 
 

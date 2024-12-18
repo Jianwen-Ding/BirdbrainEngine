@@ -1,8 +1,7 @@
-CMakeFiles/BBEngine.dir/src/RenderManager.cpp.o: \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/RenderManager.cpp \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/RenderManager.hpp \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/renderer/ModelObject.hpp \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/renderer/Transform.hpp \
+CMakeFiles/BBEngine.dir/src/renderer/Mesh.cpp.o: \
+  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Mesh.cpp \
+  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/renderer/Mesh.hpp \
+  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/renderer/Vertex.hpp \
   /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/glm-master/glm/glm.hpp \
   /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/glm-master/glm/detail/_fixes.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/cmath \
@@ -967,9 +966,6 @@ CMakeFiles/BBEngine.dir/src/RenderManager.cpp.o: \
   /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/glm-master/glm/gtc/epsilon.inl \
   /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/glm-master/glm/gtc/../vector_relational.hpp \
   /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/glm-master/glm/gtc/../common.hpp \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/glad/glad.h \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/KHR/khrplatform.h \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/renderer/LightObject.hpp \
   /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/renderer/Shader.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/string \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__ios/fpos.h \
@@ -1048,46 +1044,8 @@ CMakeFiles/BBEngine.dir/src/RenderManager.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__filesystem/u8path.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/sstream \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/renderer/Mesh.hpp \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/renderer/Vertex.hpp \
+  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/glad/glad.h \
+  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/KHR/khrplatform.h \
   /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/renderer/Texture.hpp \
   /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/renderer/TextureArray.hpp \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/renderer/Camera.hpp \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/renderer/Model.hpp \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/Importer.hpp \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/types.h \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/defs.h \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/config.h \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/vector2.h \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/vector3.h \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/color4.h \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/matrix3x3.h \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/matrix4x4.h \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/quaternion.h \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/vector2.inl \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/vector3.inl \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/color4.inl \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/matrix3x3.inl \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/matrix4x4.inl \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/MathFunctions.h \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/quaternion.inl \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/scene.h \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/texture.h \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/./Compiler/pushpack1.h \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/./Compiler/poppack1.h \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/mesh.h \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/aabb.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/unordered_set \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/light.h \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/camera.h \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/material.h \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/material.inl \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/anim.h \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/metadata.h \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/import/assimp/postprocess.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/map \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__tree \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/renderer/DirLightObject.hpp \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/renderer/SpotLightObject.hpp \
-  /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/include/renderer/PointLightObject.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/iostream

@@ -83,122 +83,10 @@ CMakeFiles/BBEngine.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/main.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/main.cpp -o CMakeFiles/BBEngine.dir/main.cpp.s
 
-CMakeFiles/BBEngine.dir/src/Camera.cpp.o: CMakeFiles/BBEngine.dir/flags.make
-CMakeFiles/BBEngine.dir/src/Camera.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Camera.cpp
-CMakeFiles/BBEngine.dir/src/Camera.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/BBEngine.dir/src/Camera.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/Camera.cpp.o -MF CMakeFiles/BBEngine.dir/src/Camera.cpp.o.d -o CMakeFiles/BBEngine.dir/src/Camera.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Camera.cpp
-
-CMakeFiles/BBEngine.dir/src/Camera.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/Camera.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Camera.cpp > CMakeFiles/BBEngine.dir/src/Camera.cpp.i
-
-CMakeFiles/BBEngine.dir/src/Camera.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/Camera.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Camera.cpp -o CMakeFiles/BBEngine.dir/src/Camera.cpp.s
-
-CMakeFiles/BBEngine.dir/src/DirLightObject.cpp.o: CMakeFiles/BBEngine.dir/flags.make
-CMakeFiles/BBEngine.dir/src/DirLightObject.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/DirLightObject.cpp
-CMakeFiles/BBEngine.dir/src/DirLightObject.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/BBEngine.dir/src/DirLightObject.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/DirLightObject.cpp.o -MF CMakeFiles/BBEngine.dir/src/DirLightObject.cpp.o.d -o CMakeFiles/BBEngine.dir/src/DirLightObject.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/DirLightObject.cpp
-
-CMakeFiles/BBEngine.dir/src/DirLightObject.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/DirLightObject.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/DirLightObject.cpp > CMakeFiles/BBEngine.dir/src/DirLightObject.cpp.i
-
-CMakeFiles/BBEngine.dir/src/DirLightObject.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/DirLightObject.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/DirLightObject.cpp -o CMakeFiles/BBEngine.dir/src/DirLightObject.cpp.s
-
-CMakeFiles/BBEngine.dir/src/LightObject.cpp.o: CMakeFiles/BBEngine.dir/flags.make
-CMakeFiles/BBEngine.dir/src/LightObject.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/LightObject.cpp
-CMakeFiles/BBEngine.dir/src/LightObject.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/BBEngine.dir/src/LightObject.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/LightObject.cpp.o -MF CMakeFiles/BBEngine.dir/src/LightObject.cpp.o.d -o CMakeFiles/BBEngine.dir/src/LightObject.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/LightObject.cpp
-
-CMakeFiles/BBEngine.dir/src/LightObject.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/LightObject.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/LightObject.cpp > CMakeFiles/BBEngine.dir/src/LightObject.cpp.i
-
-CMakeFiles/BBEngine.dir/src/LightObject.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/LightObject.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/LightObject.cpp -o CMakeFiles/BBEngine.dir/src/LightObject.cpp.s
-
-CMakeFiles/BBEngine.dir/src/Mesh.cpp.o: CMakeFiles/BBEngine.dir/flags.make
-CMakeFiles/BBEngine.dir/src/Mesh.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Mesh.cpp
-CMakeFiles/BBEngine.dir/src/Mesh.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/BBEngine.dir/src/Mesh.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/Mesh.cpp.o -MF CMakeFiles/BBEngine.dir/src/Mesh.cpp.o.d -o CMakeFiles/BBEngine.dir/src/Mesh.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Mesh.cpp
-
-CMakeFiles/BBEngine.dir/src/Mesh.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/Mesh.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Mesh.cpp > CMakeFiles/BBEngine.dir/src/Mesh.cpp.i
-
-CMakeFiles/BBEngine.dir/src/Mesh.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/Mesh.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Mesh.cpp -o CMakeFiles/BBEngine.dir/src/Mesh.cpp.s
-
-CMakeFiles/BBEngine.dir/src/Model.cpp.o: CMakeFiles/BBEngine.dir/flags.make
-CMakeFiles/BBEngine.dir/src/Model.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Model.cpp
-CMakeFiles/BBEngine.dir/src/Model.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/BBEngine.dir/src/Model.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/Model.cpp.o -MF CMakeFiles/BBEngine.dir/src/Model.cpp.o.d -o CMakeFiles/BBEngine.dir/src/Model.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Model.cpp
-
-CMakeFiles/BBEngine.dir/src/Model.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/Model.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Model.cpp > CMakeFiles/BBEngine.dir/src/Model.cpp.i
-
-CMakeFiles/BBEngine.dir/src/Model.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/Model.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Model.cpp -o CMakeFiles/BBEngine.dir/src/Model.cpp.s
-
-CMakeFiles/BBEngine.dir/src/ModelObject.cpp.o: CMakeFiles/BBEngine.dir/flags.make
-CMakeFiles/BBEngine.dir/src/ModelObject.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/ModelObject.cpp
-CMakeFiles/BBEngine.dir/src/ModelObject.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/BBEngine.dir/src/ModelObject.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/ModelObject.cpp.o -MF CMakeFiles/BBEngine.dir/src/ModelObject.cpp.o.d -o CMakeFiles/BBEngine.dir/src/ModelObject.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/ModelObject.cpp
-
-CMakeFiles/BBEngine.dir/src/ModelObject.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/ModelObject.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/ModelObject.cpp > CMakeFiles/BBEngine.dir/src/ModelObject.cpp.i
-
-CMakeFiles/BBEngine.dir/src/ModelObject.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/ModelObject.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/ModelObject.cpp -o CMakeFiles/BBEngine.dir/src/ModelObject.cpp.s
-
-CMakeFiles/BBEngine.dir/src/Plane.cpp.o: CMakeFiles/BBEngine.dir/flags.make
-CMakeFiles/BBEngine.dir/src/Plane.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Plane.cpp
-CMakeFiles/BBEngine.dir/src/Plane.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/BBEngine.dir/src/Plane.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/Plane.cpp.o -MF CMakeFiles/BBEngine.dir/src/Plane.cpp.o.d -o CMakeFiles/BBEngine.dir/src/Plane.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Plane.cpp
-
-CMakeFiles/BBEngine.dir/src/Plane.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/Plane.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Plane.cpp > CMakeFiles/BBEngine.dir/src/Plane.cpp.i
-
-CMakeFiles/BBEngine.dir/src/Plane.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/Plane.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Plane.cpp -o CMakeFiles/BBEngine.dir/src/Plane.cpp.s
-
-CMakeFiles/BBEngine.dir/src/PointLightObject.cpp.o: CMakeFiles/BBEngine.dir/flags.make
-CMakeFiles/BBEngine.dir/src/PointLightObject.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/PointLightObject.cpp
-CMakeFiles/BBEngine.dir/src/PointLightObject.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/BBEngine.dir/src/PointLightObject.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/PointLightObject.cpp.o -MF CMakeFiles/BBEngine.dir/src/PointLightObject.cpp.o.d -o CMakeFiles/BBEngine.dir/src/PointLightObject.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/PointLightObject.cpp
-
-CMakeFiles/BBEngine.dir/src/PointLightObject.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/PointLightObject.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/PointLightObject.cpp > CMakeFiles/BBEngine.dir/src/PointLightObject.cpp.i
-
-CMakeFiles/BBEngine.dir/src/PointLightObject.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/PointLightObject.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/PointLightObject.cpp -o CMakeFiles/BBEngine.dir/src/PointLightObject.cpp.s
-
 CMakeFiles/BBEngine.dir/src/RenderManager.cpp.o: CMakeFiles/BBEngine.dir/flags.make
 CMakeFiles/BBEngine.dir/src/RenderManager.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/RenderManager.cpp
 CMakeFiles/BBEngine.dir/src/RenderManager.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/BBEngine.dir/src/RenderManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/BBEngine.dir/src/RenderManager.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/RenderManager.cpp.o -MF CMakeFiles/BBEngine.dir/src/RenderManager.cpp.o.d -o CMakeFiles/BBEngine.dir/src/RenderManager.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/RenderManager.cpp
 
 CMakeFiles/BBEngine.dir/src/RenderManager.cpp.i: cmake_force
@@ -209,160 +97,272 @@ CMakeFiles/BBEngine.dir/src/RenderManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/RenderManager.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/RenderManager.cpp -o CMakeFiles/BBEngine.dir/src/RenderManager.cpp.s
 
-CMakeFiles/BBEngine.dir/src/Shader.cpp.o: CMakeFiles/BBEngine.dir/flags.make
-CMakeFiles/BBEngine.dir/src/Shader.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Shader.cpp
-CMakeFiles/BBEngine.dir/src/Shader.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/BBEngine.dir/src/Shader.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/Shader.cpp.o -MF CMakeFiles/BBEngine.dir/src/Shader.cpp.o.d -o CMakeFiles/BBEngine.dir/src/Shader.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Shader.cpp
+CMakeFiles/BBEngine.dir/src/renderer/Camera.cpp.o: CMakeFiles/BBEngine.dir/flags.make
+CMakeFiles/BBEngine.dir/src/renderer/Camera.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Camera.cpp
+CMakeFiles/BBEngine.dir/src/renderer/Camera.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/BBEngine.dir/src/renderer/Camera.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/renderer/Camera.cpp.o -MF CMakeFiles/BBEngine.dir/src/renderer/Camera.cpp.o.d -o CMakeFiles/BBEngine.dir/src/renderer/Camera.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Camera.cpp
 
-CMakeFiles/BBEngine.dir/src/Shader.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/Shader.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Shader.cpp > CMakeFiles/BBEngine.dir/src/Shader.cpp.i
+CMakeFiles/BBEngine.dir/src/renderer/Camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/renderer/Camera.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Camera.cpp > CMakeFiles/BBEngine.dir/src/renderer/Camera.cpp.i
 
-CMakeFiles/BBEngine.dir/src/Shader.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/Shader.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Shader.cpp -o CMakeFiles/BBEngine.dir/src/Shader.cpp.s
+CMakeFiles/BBEngine.dir/src/renderer/Camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/renderer/Camera.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Camera.cpp -o CMakeFiles/BBEngine.dir/src/renderer/Camera.cpp.s
 
-CMakeFiles/BBEngine.dir/src/SpotLightObject.cpp.o: CMakeFiles/BBEngine.dir/flags.make
-CMakeFiles/BBEngine.dir/src/SpotLightObject.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/SpotLightObject.cpp
-CMakeFiles/BBEngine.dir/src/SpotLightObject.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/BBEngine.dir/src/SpotLightObject.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/SpotLightObject.cpp.o -MF CMakeFiles/BBEngine.dir/src/SpotLightObject.cpp.o.d -o CMakeFiles/BBEngine.dir/src/SpotLightObject.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/SpotLightObject.cpp
+CMakeFiles/BBEngine.dir/src/renderer/DirLightObject.cpp.o: CMakeFiles/BBEngine.dir/flags.make
+CMakeFiles/BBEngine.dir/src/renderer/DirLightObject.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/DirLightObject.cpp
+CMakeFiles/BBEngine.dir/src/renderer/DirLightObject.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/BBEngine.dir/src/renderer/DirLightObject.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/renderer/DirLightObject.cpp.o -MF CMakeFiles/BBEngine.dir/src/renderer/DirLightObject.cpp.o.d -o CMakeFiles/BBEngine.dir/src/renderer/DirLightObject.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/DirLightObject.cpp
 
-CMakeFiles/BBEngine.dir/src/SpotLightObject.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/SpotLightObject.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/SpotLightObject.cpp > CMakeFiles/BBEngine.dir/src/SpotLightObject.cpp.i
+CMakeFiles/BBEngine.dir/src/renderer/DirLightObject.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/renderer/DirLightObject.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/DirLightObject.cpp > CMakeFiles/BBEngine.dir/src/renderer/DirLightObject.cpp.i
 
-CMakeFiles/BBEngine.dir/src/SpotLightObject.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/SpotLightObject.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/SpotLightObject.cpp -o CMakeFiles/BBEngine.dir/src/SpotLightObject.cpp.s
+CMakeFiles/BBEngine.dir/src/renderer/DirLightObject.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/renderer/DirLightObject.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/DirLightObject.cpp -o CMakeFiles/BBEngine.dir/src/renderer/DirLightObject.cpp.s
 
-CMakeFiles/BBEngine.dir/src/Texture.cpp.o: CMakeFiles/BBEngine.dir/flags.make
-CMakeFiles/BBEngine.dir/src/Texture.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Texture.cpp
-CMakeFiles/BBEngine.dir/src/Texture.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/BBEngine.dir/src/Texture.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/Texture.cpp.o -MF CMakeFiles/BBEngine.dir/src/Texture.cpp.o.d -o CMakeFiles/BBEngine.dir/src/Texture.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Texture.cpp
+CMakeFiles/BBEngine.dir/src/renderer/LightObject.cpp.o: CMakeFiles/BBEngine.dir/flags.make
+CMakeFiles/BBEngine.dir/src/renderer/LightObject.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/LightObject.cpp
+CMakeFiles/BBEngine.dir/src/renderer/LightObject.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/BBEngine.dir/src/renderer/LightObject.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/renderer/LightObject.cpp.o -MF CMakeFiles/BBEngine.dir/src/renderer/LightObject.cpp.o.d -o CMakeFiles/BBEngine.dir/src/renderer/LightObject.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/LightObject.cpp
 
-CMakeFiles/BBEngine.dir/src/Texture.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/Texture.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Texture.cpp > CMakeFiles/BBEngine.dir/src/Texture.cpp.i
+CMakeFiles/BBEngine.dir/src/renderer/LightObject.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/renderer/LightObject.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/LightObject.cpp > CMakeFiles/BBEngine.dir/src/renderer/LightObject.cpp.i
 
-CMakeFiles/BBEngine.dir/src/Texture.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/Texture.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Texture.cpp -o CMakeFiles/BBEngine.dir/src/Texture.cpp.s
+CMakeFiles/BBEngine.dir/src/renderer/LightObject.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/renderer/LightObject.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/LightObject.cpp -o CMakeFiles/BBEngine.dir/src/renderer/LightObject.cpp.s
 
-CMakeFiles/BBEngine.dir/src/TextureArray.cpp.o: CMakeFiles/BBEngine.dir/flags.make
-CMakeFiles/BBEngine.dir/src/TextureArray.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/TextureArray.cpp
-CMakeFiles/BBEngine.dir/src/TextureArray.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/BBEngine.dir/src/TextureArray.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/TextureArray.cpp.o -MF CMakeFiles/BBEngine.dir/src/TextureArray.cpp.o.d -o CMakeFiles/BBEngine.dir/src/TextureArray.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/TextureArray.cpp
+CMakeFiles/BBEngine.dir/src/renderer/Mesh.cpp.o: CMakeFiles/BBEngine.dir/flags.make
+CMakeFiles/BBEngine.dir/src/renderer/Mesh.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Mesh.cpp
+CMakeFiles/BBEngine.dir/src/renderer/Mesh.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/BBEngine.dir/src/renderer/Mesh.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/renderer/Mesh.cpp.o -MF CMakeFiles/BBEngine.dir/src/renderer/Mesh.cpp.o.d -o CMakeFiles/BBEngine.dir/src/renderer/Mesh.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Mesh.cpp
 
-CMakeFiles/BBEngine.dir/src/TextureArray.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/TextureArray.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/TextureArray.cpp > CMakeFiles/BBEngine.dir/src/TextureArray.cpp.i
+CMakeFiles/BBEngine.dir/src/renderer/Mesh.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/renderer/Mesh.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Mesh.cpp > CMakeFiles/BBEngine.dir/src/renderer/Mesh.cpp.i
 
-CMakeFiles/BBEngine.dir/src/TextureArray.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/TextureArray.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/TextureArray.cpp -o CMakeFiles/BBEngine.dir/src/TextureArray.cpp.s
+CMakeFiles/BBEngine.dir/src/renderer/Mesh.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/renderer/Mesh.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Mesh.cpp -o CMakeFiles/BBEngine.dir/src/renderer/Mesh.cpp.s
 
-CMakeFiles/BBEngine.dir/src/Transform.cpp.o: CMakeFiles/BBEngine.dir/flags.make
-CMakeFiles/BBEngine.dir/src/Transform.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Transform.cpp
-CMakeFiles/BBEngine.dir/src/Transform.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/BBEngine.dir/src/Transform.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/Transform.cpp.o -MF CMakeFiles/BBEngine.dir/src/Transform.cpp.o.d -o CMakeFiles/BBEngine.dir/src/Transform.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Transform.cpp
+CMakeFiles/BBEngine.dir/src/renderer/Model.cpp.o: CMakeFiles/BBEngine.dir/flags.make
+CMakeFiles/BBEngine.dir/src/renderer/Model.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Model.cpp
+CMakeFiles/BBEngine.dir/src/renderer/Model.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/BBEngine.dir/src/renderer/Model.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/renderer/Model.cpp.o -MF CMakeFiles/BBEngine.dir/src/renderer/Model.cpp.o.d -o CMakeFiles/BBEngine.dir/src/renderer/Model.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Model.cpp
 
-CMakeFiles/BBEngine.dir/src/Transform.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/Transform.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Transform.cpp > CMakeFiles/BBEngine.dir/src/Transform.cpp.i
+CMakeFiles/BBEngine.dir/src/renderer/Model.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/renderer/Model.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Model.cpp > CMakeFiles/BBEngine.dir/src/renderer/Model.cpp.i
 
-CMakeFiles/BBEngine.dir/src/Transform.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/Transform.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/Transform.cpp -o CMakeFiles/BBEngine.dir/src/Transform.cpp.s
+CMakeFiles/BBEngine.dir/src/renderer/Model.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/renderer/Model.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Model.cpp -o CMakeFiles/BBEngine.dir/src/renderer/Model.cpp.s
 
-CMakeFiles/BBEngine.dir/src/stb_imag.cpp.o: CMakeFiles/BBEngine.dir/flags.make
-CMakeFiles/BBEngine.dir/src/stb_imag.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/stb_imag.cpp
-CMakeFiles/BBEngine.dir/src/stb_imag.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/BBEngine.dir/src/stb_imag.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/stb_imag.cpp.o -MF CMakeFiles/BBEngine.dir/src/stb_imag.cpp.o.d -o CMakeFiles/BBEngine.dir/src/stb_imag.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/stb_imag.cpp
+CMakeFiles/BBEngine.dir/src/renderer/ModelObject.cpp.o: CMakeFiles/BBEngine.dir/flags.make
+CMakeFiles/BBEngine.dir/src/renderer/ModelObject.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/ModelObject.cpp
+CMakeFiles/BBEngine.dir/src/renderer/ModelObject.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/BBEngine.dir/src/renderer/ModelObject.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/renderer/ModelObject.cpp.o -MF CMakeFiles/BBEngine.dir/src/renderer/ModelObject.cpp.o.d -o CMakeFiles/BBEngine.dir/src/renderer/ModelObject.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/ModelObject.cpp
 
-CMakeFiles/BBEngine.dir/src/stb_imag.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/stb_imag.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/stb_imag.cpp > CMakeFiles/BBEngine.dir/src/stb_imag.cpp.i
+CMakeFiles/BBEngine.dir/src/renderer/ModelObject.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/renderer/ModelObject.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/ModelObject.cpp > CMakeFiles/BBEngine.dir/src/renderer/ModelObject.cpp.i
 
-CMakeFiles/BBEngine.dir/src/stb_imag.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/stb_imag.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/stb_imag.cpp -o CMakeFiles/BBEngine.dir/src/stb_imag.cpp.s
+CMakeFiles/BBEngine.dir/src/renderer/ModelObject.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/renderer/ModelObject.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/ModelObject.cpp -o CMakeFiles/BBEngine.dir/src/renderer/ModelObject.cpp.s
 
-CMakeFiles/BBEngine.dir/src/structs/Vertex.cpp.o: CMakeFiles/BBEngine.dir/flags.make
-CMakeFiles/BBEngine.dir/src/structs/Vertex.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/structs/Vertex.cpp
-CMakeFiles/BBEngine.dir/src/structs/Vertex.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/BBEngine.dir/src/structs/Vertex.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/structs/Vertex.cpp.o -MF CMakeFiles/BBEngine.dir/src/structs/Vertex.cpp.o.d -o CMakeFiles/BBEngine.dir/src/structs/Vertex.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/structs/Vertex.cpp
+CMakeFiles/BBEngine.dir/src/renderer/Plane.cpp.o: CMakeFiles/BBEngine.dir/flags.make
+CMakeFiles/BBEngine.dir/src/renderer/Plane.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Plane.cpp
+CMakeFiles/BBEngine.dir/src/renderer/Plane.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/BBEngine.dir/src/renderer/Plane.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/renderer/Plane.cpp.o -MF CMakeFiles/BBEngine.dir/src/renderer/Plane.cpp.o.d -o CMakeFiles/BBEngine.dir/src/renderer/Plane.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Plane.cpp
 
-CMakeFiles/BBEngine.dir/src/structs/Vertex.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/structs/Vertex.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/structs/Vertex.cpp > CMakeFiles/BBEngine.dir/src/structs/Vertex.cpp.i
+CMakeFiles/BBEngine.dir/src/renderer/Plane.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/renderer/Plane.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Plane.cpp > CMakeFiles/BBEngine.dir/src/renderer/Plane.cpp.i
 
-CMakeFiles/BBEngine.dir/src/structs/Vertex.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/structs/Vertex.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/structs/Vertex.cpp -o CMakeFiles/BBEngine.dir/src/structs/Vertex.cpp.s
+CMakeFiles/BBEngine.dir/src/renderer/Plane.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/renderer/Plane.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Plane.cpp -o CMakeFiles/BBEngine.dir/src/renderer/Plane.cpp.s
 
-CMakeFiles/BBEngine.dir/src/glad.c.o: CMakeFiles/BBEngine.dir/flags.make
-CMakeFiles/BBEngine.dir/src/glad.c.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/glad.c
-CMakeFiles/BBEngine.dir/src/glad.c.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/BBEngine.dir/src/glad.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/glad.c.o -MF CMakeFiles/BBEngine.dir/src/glad.c.o.d -o CMakeFiles/BBEngine.dir/src/glad.c.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/glad.c
+CMakeFiles/BBEngine.dir/src/renderer/PointLightObject.cpp.o: CMakeFiles/BBEngine.dir/flags.make
+CMakeFiles/BBEngine.dir/src/renderer/PointLightObject.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/PointLightObject.cpp
+CMakeFiles/BBEngine.dir/src/renderer/PointLightObject.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/BBEngine.dir/src/renderer/PointLightObject.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/renderer/PointLightObject.cpp.o -MF CMakeFiles/BBEngine.dir/src/renderer/PointLightObject.cpp.o.d -o CMakeFiles/BBEngine.dir/src/renderer/PointLightObject.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/PointLightObject.cpp
 
-CMakeFiles/BBEngine.dir/src/glad.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/BBEngine.dir/src/glad.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/glad.c > CMakeFiles/BBEngine.dir/src/glad.c.i
+CMakeFiles/BBEngine.dir/src/renderer/PointLightObject.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/renderer/PointLightObject.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/PointLightObject.cpp > CMakeFiles/BBEngine.dir/src/renderer/PointLightObject.cpp.i
 
-CMakeFiles/BBEngine.dir/src/glad.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/BBEngine.dir/src/glad.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/glad.c -o CMakeFiles/BBEngine.dir/src/glad.c.s
+CMakeFiles/BBEngine.dir/src/renderer/PointLightObject.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/renderer/PointLightObject.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/PointLightObject.cpp -o CMakeFiles/BBEngine.dir/src/renderer/PointLightObject.cpp.s
+
+CMakeFiles/BBEngine.dir/src/renderer/Shader.cpp.o: CMakeFiles/BBEngine.dir/flags.make
+CMakeFiles/BBEngine.dir/src/renderer/Shader.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Shader.cpp
+CMakeFiles/BBEngine.dir/src/renderer/Shader.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/BBEngine.dir/src/renderer/Shader.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/renderer/Shader.cpp.o -MF CMakeFiles/BBEngine.dir/src/renderer/Shader.cpp.o.d -o CMakeFiles/BBEngine.dir/src/renderer/Shader.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Shader.cpp
+
+CMakeFiles/BBEngine.dir/src/renderer/Shader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/renderer/Shader.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Shader.cpp > CMakeFiles/BBEngine.dir/src/renderer/Shader.cpp.i
+
+CMakeFiles/BBEngine.dir/src/renderer/Shader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/renderer/Shader.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Shader.cpp -o CMakeFiles/BBEngine.dir/src/renderer/Shader.cpp.s
+
+CMakeFiles/BBEngine.dir/src/renderer/SpotLightObject.cpp.o: CMakeFiles/BBEngine.dir/flags.make
+CMakeFiles/BBEngine.dir/src/renderer/SpotLightObject.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/SpotLightObject.cpp
+CMakeFiles/BBEngine.dir/src/renderer/SpotLightObject.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/BBEngine.dir/src/renderer/SpotLightObject.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/renderer/SpotLightObject.cpp.o -MF CMakeFiles/BBEngine.dir/src/renderer/SpotLightObject.cpp.o.d -o CMakeFiles/BBEngine.dir/src/renderer/SpotLightObject.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/SpotLightObject.cpp
+
+CMakeFiles/BBEngine.dir/src/renderer/SpotLightObject.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/renderer/SpotLightObject.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/SpotLightObject.cpp > CMakeFiles/BBEngine.dir/src/renderer/SpotLightObject.cpp.i
+
+CMakeFiles/BBEngine.dir/src/renderer/SpotLightObject.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/renderer/SpotLightObject.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/SpotLightObject.cpp -o CMakeFiles/BBEngine.dir/src/renderer/SpotLightObject.cpp.s
+
+CMakeFiles/BBEngine.dir/src/renderer/Texture.cpp.o: CMakeFiles/BBEngine.dir/flags.make
+CMakeFiles/BBEngine.dir/src/renderer/Texture.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Texture.cpp
+CMakeFiles/BBEngine.dir/src/renderer/Texture.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/BBEngine.dir/src/renderer/Texture.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/renderer/Texture.cpp.o -MF CMakeFiles/BBEngine.dir/src/renderer/Texture.cpp.o.d -o CMakeFiles/BBEngine.dir/src/renderer/Texture.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Texture.cpp
+
+CMakeFiles/BBEngine.dir/src/renderer/Texture.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/renderer/Texture.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Texture.cpp > CMakeFiles/BBEngine.dir/src/renderer/Texture.cpp.i
+
+CMakeFiles/BBEngine.dir/src/renderer/Texture.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/renderer/Texture.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Texture.cpp -o CMakeFiles/BBEngine.dir/src/renderer/Texture.cpp.s
+
+CMakeFiles/BBEngine.dir/src/renderer/TextureArray.cpp.o: CMakeFiles/BBEngine.dir/flags.make
+CMakeFiles/BBEngine.dir/src/renderer/TextureArray.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/TextureArray.cpp
+CMakeFiles/BBEngine.dir/src/renderer/TextureArray.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/BBEngine.dir/src/renderer/TextureArray.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/renderer/TextureArray.cpp.o -MF CMakeFiles/BBEngine.dir/src/renderer/TextureArray.cpp.o.d -o CMakeFiles/BBEngine.dir/src/renderer/TextureArray.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/TextureArray.cpp
+
+CMakeFiles/BBEngine.dir/src/renderer/TextureArray.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/renderer/TextureArray.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/TextureArray.cpp > CMakeFiles/BBEngine.dir/src/renderer/TextureArray.cpp.i
+
+CMakeFiles/BBEngine.dir/src/renderer/TextureArray.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/renderer/TextureArray.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/TextureArray.cpp -o CMakeFiles/BBEngine.dir/src/renderer/TextureArray.cpp.s
+
+CMakeFiles/BBEngine.dir/src/renderer/Transform.cpp.o: CMakeFiles/BBEngine.dir/flags.make
+CMakeFiles/BBEngine.dir/src/renderer/Transform.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Transform.cpp
+CMakeFiles/BBEngine.dir/src/renderer/Transform.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/BBEngine.dir/src/renderer/Transform.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/renderer/Transform.cpp.o -MF CMakeFiles/BBEngine.dir/src/renderer/Transform.cpp.o.d -o CMakeFiles/BBEngine.dir/src/renderer/Transform.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Transform.cpp
+
+CMakeFiles/BBEngine.dir/src/renderer/Transform.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/renderer/Transform.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Transform.cpp > CMakeFiles/BBEngine.dir/src/renderer/Transform.cpp.i
+
+CMakeFiles/BBEngine.dir/src/renderer/Transform.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/renderer/Transform.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Transform.cpp -o CMakeFiles/BBEngine.dir/src/renderer/Transform.cpp.s
+
+CMakeFiles/BBEngine.dir/src/renderer/Vertex.cpp.o: CMakeFiles/BBEngine.dir/flags.make
+CMakeFiles/BBEngine.dir/src/renderer/Vertex.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Vertex.cpp
+CMakeFiles/BBEngine.dir/src/renderer/Vertex.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/BBEngine.dir/src/renderer/Vertex.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/renderer/Vertex.cpp.o -MF CMakeFiles/BBEngine.dir/src/renderer/Vertex.cpp.o.d -o CMakeFiles/BBEngine.dir/src/renderer/Vertex.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Vertex.cpp
+
+CMakeFiles/BBEngine.dir/src/renderer/Vertex.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/renderer/Vertex.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Vertex.cpp > CMakeFiles/BBEngine.dir/src/renderer/Vertex.cpp.i
+
+CMakeFiles/BBEngine.dir/src/renderer/Vertex.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/renderer/Vertex.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/Vertex.cpp -o CMakeFiles/BBEngine.dir/src/renderer/Vertex.cpp.s
+
+CMakeFiles/BBEngine.dir/src/renderer/stb_imag.cpp.o: CMakeFiles/BBEngine.dir/flags.make
+CMakeFiles/BBEngine.dir/src/renderer/stb_imag.cpp.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/stb_imag.cpp
+CMakeFiles/BBEngine.dir/src/renderer/stb_imag.cpp.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/BBEngine.dir/src/renderer/stb_imag.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/renderer/stb_imag.cpp.o -MF CMakeFiles/BBEngine.dir/src/renderer/stb_imag.cpp.o.d -o CMakeFiles/BBEngine.dir/src/renderer/stb_imag.cpp.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/stb_imag.cpp
+
+CMakeFiles/BBEngine.dir/src/renderer/stb_imag.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/BBEngine.dir/src/renderer/stb_imag.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/stb_imag.cpp > CMakeFiles/BBEngine.dir/src/renderer/stb_imag.cpp.i
+
+CMakeFiles/BBEngine.dir/src/renderer/stb_imag.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/BBEngine.dir/src/renderer/stb_imag.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/stb_imag.cpp -o CMakeFiles/BBEngine.dir/src/renderer/stb_imag.cpp.s
+
+CMakeFiles/BBEngine.dir/src/renderer/glad.c.o: CMakeFiles/BBEngine.dir/flags.make
+CMakeFiles/BBEngine.dir/src/renderer/glad.c.o: /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/glad.c
+CMakeFiles/BBEngine.dir/src/renderer/glad.c.o: CMakeFiles/BBEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/out/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/BBEngine.dir/src/renderer/glad.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/BBEngine.dir/src/renderer/glad.c.o -MF CMakeFiles/BBEngine.dir/src/renderer/glad.c.o.d -o CMakeFiles/BBEngine.dir/src/renderer/glad.c.o -c /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/glad.c
+
+CMakeFiles/BBEngine.dir/src/renderer/glad.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/BBEngine.dir/src/renderer/glad.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/glad.c > CMakeFiles/BBEngine.dir/src/renderer/glad.c.i
+
+CMakeFiles/BBEngine.dir/src/renderer/glad.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/BBEngine.dir/src/renderer/glad.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/jianwending/Documents/ProjectsFolder/CurrentProjects/BirdBrainEngine/src/renderer/glad.c -o CMakeFiles/BBEngine.dir/src/renderer/glad.c.s
 
 # Object files for target BBEngine
 BBEngine_OBJECTS = \
 "CMakeFiles/BBEngine.dir/main.cpp.o" \
-"CMakeFiles/BBEngine.dir/src/Camera.cpp.o" \
-"CMakeFiles/BBEngine.dir/src/DirLightObject.cpp.o" \
-"CMakeFiles/BBEngine.dir/src/LightObject.cpp.o" \
-"CMakeFiles/BBEngine.dir/src/Mesh.cpp.o" \
-"CMakeFiles/BBEngine.dir/src/Model.cpp.o" \
-"CMakeFiles/BBEngine.dir/src/ModelObject.cpp.o" \
-"CMakeFiles/BBEngine.dir/src/Plane.cpp.o" \
-"CMakeFiles/BBEngine.dir/src/PointLightObject.cpp.o" \
 "CMakeFiles/BBEngine.dir/src/RenderManager.cpp.o" \
-"CMakeFiles/BBEngine.dir/src/Shader.cpp.o" \
-"CMakeFiles/BBEngine.dir/src/SpotLightObject.cpp.o" \
-"CMakeFiles/BBEngine.dir/src/Texture.cpp.o" \
-"CMakeFiles/BBEngine.dir/src/TextureArray.cpp.o" \
-"CMakeFiles/BBEngine.dir/src/Transform.cpp.o" \
-"CMakeFiles/BBEngine.dir/src/stb_imag.cpp.o" \
-"CMakeFiles/BBEngine.dir/src/structs/Vertex.cpp.o" \
-"CMakeFiles/BBEngine.dir/src/glad.c.o"
+"CMakeFiles/BBEngine.dir/src/renderer/Camera.cpp.o" \
+"CMakeFiles/BBEngine.dir/src/renderer/DirLightObject.cpp.o" \
+"CMakeFiles/BBEngine.dir/src/renderer/LightObject.cpp.o" \
+"CMakeFiles/BBEngine.dir/src/renderer/Mesh.cpp.o" \
+"CMakeFiles/BBEngine.dir/src/renderer/Model.cpp.o" \
+"CMakeFiles/BBEngine.dir/src/renderer/ModelObject.cpp.o" \
+"CMakeFiles/BBEngine.dir/src/renderer/Plane.cpp.o" \
+"CMakeFiles/BBEngine.dir/src/renderer/PointLightObject.cpp.o" \
+"CMakeFiles/BBEngine.dir/src/renderer/Shader.cpp.o" \
+"CMakeFiles/BBEngine.dir/src/renderer/SpotLightObject.cpp.o" \
+"CMakeFiles/BBEngine.dir/src/renderer/Texture.cpp.o" \
+"CMakeFiles/BBEngine.dir/src/renderer/TextureArray.cpp.o" \
+"CMakeFiles/BBEngine.dir/src/renderer/Transform.cpp.o" \
+"CMakeFiles/BBEngine.dir/src/renderer/Vertex.cpp.o" \
+"CMakeFiles/BBEngine.dir/src/renderer/stb_imag.cpp.o" \
+"CMakeFiles/BBEngine.dir/src/renderer/glad.c.o"
 
 # External object files for target BBEngine
 BBEngine_EXTERNAL_OBJECTS =
 
 BBEngine: CMakeFiles/BBEngine.dir/main.cpp.o
-BBEngine: CMakeFiles/BBEngine.dir/src/Camera.cpp.o
-BBEngine: CMakeFiles/BBEngine.dir/src/DirLightObject.cpp.o
-BBEngine: CMakeFiles/BBEngine.dir/src/LightObject.cpp.o
-BBEngine: CMakeFiles/BBEngine.dir/src/Mesh.cpp.o
-BBEngine: CMakeFiles/BBEngine.dir/src/Model.cpp.o
-BBEngine: CMakeFiles/BBEngine.dir/src/ModelObject.cpp.o
-BBEngine: CMakeFiles/BBEngine.dir/src/Plane.cpp.o
-BBEngine: CMakeFiles/BBEngine.dir/src/PointLightObject.cpp.o
 BBEngine: CMakeFiles/BBEngine.dir/src/RenderManager.cpp.o
-BBEngine: CMakeFiles/BBEngine.dir/src/Shader.cpp.o
-BBEngine: CMakeFiles/BBEngine.dir/src/SpotLightObject.cpp.o
-BBEngine: CMakeFiles/BBEngine.dir/src/Texture.cpp.o
-BBEngine: CMakeFiles/BBEngine.dir/src/TextureArray.cpp.o
-BBEngine: CMakeFiles/BBEngine.dir/src/Transform.cpp.o
-BBEngine: CMakeFiles/BBEngine.dir/src/stb_imag.cpp.o
-BBEngine: CMakeFiles/BBEngine.dir/src/structs/Vertex.cpp.o
-BBEngine: CMakeFiles/BBEngine.dir/src/glad.c.o
+BBEngine: CMakeFiles/BBEngine.dir/src/renderer/Camera.cpp.o
+BBEngine: CMakeFiles/BBEngine.dir/src/renderer/DirLightObject.cpp.o
+BBEngine: CMakeFiles/BBEngine.dir/src/renderer/LightObject.cpp.o
+BBEngine: CMakeFiles/BBEngine.dir/src/renderer/Mesh.cpp.o
+BBEngine: CMakeFiles/BBEngine.dir/src/renderer/Model.cpp.o
+BBEngine: CMakeFiles/BBEngine.dir/src/renderer/ModelObject.cpp.o
+BBEngine: CMakeFiles/BBEngine.dir/src/renderer/Plane.cpp.o
+BBEngine: CMakeFiles/BBEngine.dir/src/renderer/PointLightObject.cpp.o
+BBEngine: CMakeFiles/BBEngine.dir/src/renderer/Shader.cpp.o
+BBEngine: CMakeFiles/BBEngine.dir/src/renderer/SpotLightObject.cpp.o
+BBEngine: CMakeFiles/BBEngine.dir/src/renderer/Texture.cpp.o
+BBEngine: CMakeFiles/BBEngine.dir/src/renderer/TextureArray.cpp.o
+BBEngine: CMakeFiles/BBEngine.dir/src/renderer/Transform.cpp.o
+BBEngine: CMakeFiles/BBEngine.dir/src/renderer/Vertex.cpp.o
+BBEngine: CMakeFiles/BBEngine.dir/src/renderer/stb_imag.cpp.o
+BBEngine: CMakeFiles/BBEngine.dir/src/renderer/glad.c.o
 BBEngine: CMakeFiles/BBEngine.dir/build.make
 BBEngine: /Library/Frameworks/SDL2.framework/Versions/A/SDL2
 BBEngine: /opt/homebrew/Cellar/assimp/5.4.3/lib/libassimp.5.4.3.dylib

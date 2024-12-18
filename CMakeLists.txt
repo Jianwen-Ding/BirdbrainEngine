@@ -16,10 +16,12 @@ add_executable(${PROJECT_NAME} main.cpp ${CPP_SOURCES} ${C_SOURCES})
 # Include directories
 target_include_directories(${PROJECT_NAME} PUBLIC
     ${CMAKE_SOURCE_DIR}/include
-    ${CMAKE_SOURCE_DIR}/include/glm-master
-    ${CMAKE_SOURCE_DIR}/include/glm-master/glm
-    ${CMAKE_SOURCE_DIR}/include/glad
-    ${CMAKE_SOURCE_DIR}/include/assimp
+    ${CMAKE_SOURCE_DIR}/include/import
+    ${CMAKE_SOURCE_DIR}/include/import/glm-master
+    ${CMAKE_SOURCE_DIR}/include/import/glm-master/glm
+    ${CMAKE_SOURCE_DIR}/include/import/glad
+    ${CMAKE_SOURCE_DIR}/include/import/assimp
+    ${CMAKE_SOURCE_DIR}/include/renderer
 )
 
 # Link libraries
