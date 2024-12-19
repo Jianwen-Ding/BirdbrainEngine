@@ -14,17 +14,14 @@ class Component{
         Enitity& getEntity();
     protected:
 
-        // Constructs a component 
+        // Constructs a component with a given entity.
+        // It assigns the entity as it's owner but does not actually attach itself to the entity
         Component(Enitity& baseEntity);
         // Deattaches itself from the given entity
         virtual ~Component();
 
         // The entity that the component is attached to
         Enitity& baseEntity;
-    private:
-
-        // Allows
-        void insertEntity(Enitity& givenEntity);
         friend class Entity;
         
 };

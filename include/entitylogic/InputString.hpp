@@ -10,15 +10,23 @@ struct InputString{
     // The id of the player who inputted the string
     unsigned int playerID;
     
-    // Represents the actual inputs
-    // The further back the out field is in the vector the newer the frame is
-
+    // The first vector represents each fixed frame of gameplay
+    // The further back the field is in the outer vector the newer the frame is
     // The further back the input is in the inner vector the later they were put into the frame
     std::vector<std::vector<Input>> inputs;
+
+    // The first vector represents each fixed frame of gameplay
+    // The further back the field is in the outer vector the newer the frame is
+    // The further back the input is in the inner vector the later they were put into the frame
     // Represents the x and y coordinates of the mouse at the end of a given frame
     // [0] = x
     // [1] = y
-    std::vector<std::array<int, 2>> mousePos;
+    std::vector<std::vector<std::array<float, 2>>> mousePos;
+
+    // The copy constructor of the given input string
+    InputString(InputString& original);
+
+
 };
 
 #endif
