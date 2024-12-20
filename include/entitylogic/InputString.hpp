@@ -5,7 +5,9 @@
 
 #include <vector>
 
-// Defines a string of inputs from a single player.
+/**
+ * Defines a string of inputs from a single player.
+ */
 struct InputString{
     // The id of the player who inputted the string
     unsigned int playerID;

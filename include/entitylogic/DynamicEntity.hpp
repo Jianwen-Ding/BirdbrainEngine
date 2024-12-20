@@ -1,0 +1,6 @@
+#ifndef DYNAMICENTITY_HPP
+#define DYNAMICENTIY_HPP
+
+
+
+#endif
