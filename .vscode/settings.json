@@ -61,7 +61,8 @@
         "set": "cpp",
         "unordered_set": "cpp",
         "any": "cpp",
-        "deque": "cpp"
+        "deque": "cpp",
+        "type_traits": "cpp"
     },
     "cmake.sourceDirectory": "/Users/jianwending/Documents/ProjectsFolder/Current Projects/BirdBrainEngine/include/glm-master"
 }
