@@ -11,7 +11,7 @@
  * This is the parts of the scene that are effected by rollback.
  * This represents all objects within a scene that are effected by player input.
  */
-class GameScene : public Scene{
+class GameScene final : public Scene{
     public:
         // Updates the given scene by one frame.
         // Inputs must lead to deterministic outcomes.

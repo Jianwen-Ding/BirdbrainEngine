@@ -62,7 +62,15 @@
         "unordered_set": "cpp",
         "any": "cpp",
         "deque": "cpp",
-        "type_traits": "cpp"
+        "type_traits": "cpp",
+        "functional": "cpp",
+        "iterator": "cpp",
+        "memory_resource": "cpp",
+        "execution": "cpp"
     },
-    "cmake.sourceDirectory": "/Users/jianwending/Documents/ProjectsFolder/Current Projects/BirdBrainEngine/include/glm-master"
+    "cmake.sourceDirectory": "/Users/jianwending/Documents/ProjectsFolder/Current Projects/BirdBrainEngine/include/glm-master",
+    "cSpell.words": [
+        "Deattaches",
+        "gameplay"
+    ]
 }
